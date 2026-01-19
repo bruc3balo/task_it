@@ -2,6 +2,7 @@ name: core
 description: Abstraction of what task it can do
 version: 1.0.0
 publish_to: none
+resolution: workspace
 
 environment:
   sdk: ^3.10.7

@@ -2,6 +2,7 @@ name: taskdoer_task_board
 description: Doer task manager module
 version: 1.0.0
 publish_to: none
+resolution: workspace
 
 environment:
   sdk: ^3.10.7

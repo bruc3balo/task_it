@@ -4,12 +4,14 @@ environment:
   sdk: ^3.10.7
 
 workspace:
-  - apps/taskdoer
-  - apps/taskmanager
+#  - apps/taskdoer
+#  - apps/taskmanager
   - packages/base # If you still have this, otherwise remove
   - packages/core
-  - packages/ui_kit
+#  - packages/ui_kit
   - packages/features/auth
-  - packages/features/reports
-  - packages/features/task_board
-  - packages/platform/firebase_backend
+#  - packages/features/reports
+  - packages/features/base_task_board
+  - packages/features/taskdoer_task_board
+  - packages/features/taskmanager_task_board
+#  - packages/platform/firebase_backend

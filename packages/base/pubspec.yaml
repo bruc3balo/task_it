@@ -2,7 +2,7 @@ name: base
 description: Foundation module for Task It applications
 version: 1.0.0
 publish_to: none
-
+resolution: workspace
 
 environment:
   sdk: ^3.10.7
