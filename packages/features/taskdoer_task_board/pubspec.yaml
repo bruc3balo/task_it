@@ -1,0 +1,22 @@
+name: taskdoer_task_board
+description: Doer task manager module
+version: 1.0.0
+publish_to: none
+
+environment:
+  sdk: ^3.10.7
+
+# Add regular dependencies here.
+dependencies:
+  base:
+    path: ../../base
+
+  core:
+    path: ../../core
+
+  base_task_board:
+    path: ../base_task_board
+
+dev_dependencies:
+  lints: ^6.0.0
+  test: ^1.25.6

@@ -1,14 +1,16 @@
-name: core
-description: Abstraction of what task it can do
+name: base_task_board
+description: Task board base module
 version: 1.0.0
 publish_to: none
 
 environment:
   sdk: ^3.10.7
 
+# Add regular dependencies here.
 dependencies:
   base:
-    path: ../base
+    path: ../../base
+
   json_annotation: ^4.8.1
   freezed_annotation: ^2.4.1
 

@@ -1,0 +1,15 @@
+name: task_it_workspace
+description: The monorepo root for Task It applications.
+environment:
+  sdk: ^3.10.7
+
+workspace:
+  - apps/taskdoer
+  - apps/taskmanager
+  - packages/base # If you still have this, otherwise remove
+  - packages/core
+  - packages/ui_kit
+  - packages/features/auth
+  - packages/features/reports
+  - packages/features/task_board
+  - packages/platform/firebase_backend
