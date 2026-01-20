@@ -1,0 +1,1 @@
+export 'adapter/hive_local_database_service.dart';
