@@ -5,7 +5,8 @@ export 'failure_type.dart';
 
 class AppFailure implements Exception {
   final FailureType failureType;
+  final StackTrace? trace;
   final String message;
 
-  AppFailure({required this.failureType, this.message = "Oops! Something went wrong"});
+  AppFailure({this.failureType = FailureType.unknown, this.message = "Oops! Something went wrong", this.trace});
 }
