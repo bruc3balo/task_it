@@ -10,6 +10,8 @@ workspace:
   - packages/core
 #  - packages/ui_kit
   - packages/features/auth
+  - packages/features/auth/lib/src/domain
+  - packages/features/auth/lib/src/presentation
 #  - packages/features/reports
   - packages/features/base_task_board
   - packages/features/taskdoer_task_board
