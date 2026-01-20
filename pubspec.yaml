@@ -13,6 +13,9 @@ workspace:
   - packages/core/lib/src/connectivity
     #Platform
   - packages/platform/platform_hive_data_storage
+  - packages/platform/platform_internet_checker_connectivity
+  - packages/platform/platform_firebase_authentication
+  - packages/platform/platform_firestore_data_storage
 #  - packages/ui_kit
   - packages/features/auth
   - packages/features/auth/lib/src/data

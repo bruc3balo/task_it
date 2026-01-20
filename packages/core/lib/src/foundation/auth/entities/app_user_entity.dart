@@ -12,6 +12,8 @@ class AppUserEntity with _$AppUserEntity {
     required AppUserIdValue id,
     required EmailAddressValue email,
     required DisplayNameValue displayName,
+    required DateTime createdAt,
+    required DateTime updatedAt,
   }) = _AppUserEntity;
 
 }

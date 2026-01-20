@@ -19,7 +19,10 @@ class AppUserRepositoryImpl extends AppUserRepository {
           if (existingUserResult.failure.failureType != FailureType.notFound) return FailedResult.fromFailure(existingUserResult);
 
           //User is not duplicate and account creation can continue
-          return await _appUserDataSource.saveUser(AppUserEntity(id: form.userId, email: form.email, displayName: form.displayName));
+          var now = DateTime.now();
+          return await _appUserDataSource.saveUser(
+            AppUserEntity(id: form.userId, email: form.email, displayName: form.displayName, createdAt: now, updatedAt: now),
+          );
       }
     } catch (e, trace) {
       return FailedResult(AppFailure(trace: trace));

@@ -20,6 +20,8 @@ mixin _$AppUserEntity {
   AppUserIdValue get id => throw _privateConstructorUsedError;
   EmailAddressValue get email => throw _privateConstructorUsedError;
   DisplayNameValue get displayName => throw _privateConstructorUsedError;
+  DateTime get createdAt => throw _privateConstructorUsedError;
+  DateTime get updatedAt => throw _privateConstructorUsedError;
 
   /// Create a copy of AppUserEntity
   /// with the given fields replaced by the non-null parameter values.
@@ -39,6 +41,8 @@ abstract class $AppUserEntityCopyWith<$Res> {
     AppUserIdValue id,
     EmailAddressValue email,
     DisplayNameValue displayName,
+    DateTime createdAt,
+    DateTime updatedAt,
   });
 }
 
@@ -60,6 +64,8 @@ class _$AppUserEntityCopyWithImpl<$Res, $Val extends AppUserEntity>
     Object? id = null,
     Object? email = null,
     Object? displayName = null,
+    Object? createdAt = null,
+    Object? updatedAt = null,
   }) {
     return _then(
       _value.copyWith(
@@ -75,6 +81,14 @@ class _$AppUserEntityCopyWithImpl<$Res, $Val extends AppUserEntity>
                 ? _value.displayName
                 : displayName // ignore: cast_nullable_to_non_nullable
                       as DisplayNameValue,
+            createdAt: null == createdAt
+                ? _value.createdAt
+                : createdAt // ignore: cast_nullable_to_non_nullable
+                      as DateTime,
+            updatedAt: null == updatedAt
+                ? _value.updatedAt
+                : updatedAt // ignore: cast_nullable_to_non_nullable
+                      as DateTime,
           )
           as $Val,
     );
@@ -94,6 +108,8 @@ abstract class _$$AppUserEntityImplCopyWith<$Res>
     AppUserIdValue id,
     EmailAddressValue email,
     DisplayNameValue displayName,
+    DateTime createdAt,
+    DateTime updatedAt,
   });
 }
 
@@ -114,6 +130,8 @@ class __$$AppUserEntityImplCopyWithImpl<$Res>
     Object? id = null,
     Object? email = null,
     Object? displayName = null,
+    Object? createdAt = null,
+    Object? updatedAt = null,
   }) {
     return _then(
       _$AppUserEntityImpl(
@@ -129,6 +147,14 @@ class __$$AppUserEntityImplCopyWithImpl<$Res>
             ? _value.displayName
             : displayName // ignore: cast_nullable_to_non_nullable
                   as DisplayNameValue,
+        createdAt: null == createdAt
+            ? _value.createdAt
+            : createdAt // ignore: cast_nullable_to_non_nullable
+                  as DateTime,
+        updatedAt: null == updatedAt
+            ? _value.updatedAt
+            : updatedAt // ignore: cast_nullable_to_non_nullable
+                  as DateTime,
       ),
     );
   }
@@ -141,6 +167,8 @@ class _$AppUserEntityImpl implements _AppUserEntity {
     required this.id,
     required this.email,
     required this.displayName,
+    required this.createdAt,
+    required this.updatedAt,
   });
 
   @override
@@ -149,10 +177,14 @@ class _$AppUserEntityImpl implements _AppUserEntity {
   final EmailAddressValue email;
   @override
   final DisplayNameValue displayName;
+  @override
+  final DateTime createdAt;
+  @override
+  final DateTime updatedAt;
 
   @override
   String toString() {
-    return 'AppUserEntity(id: $id, email: $email, displayName: $displayName)';
+    return 'AppUserEntity(id: $id, email: $email, displayName: $displayName, createdAt: $createdAt, updatedAt: $updatedAt)';
   }
 
   @override
@@ -163,11 +195,16 @@ class _$AppUserEntityImpl implements _AppUserEntity {
             (identical(other.id, id) || other.id == id) &&
             (identical(other.email, email) || other.email == email) &&
             (identical(other.displayName, displayName) ||
-                other.displayName == displayName));
+                other.displayName == displayName) &&
+            (identical(other.createdAt, createdAt) ||
+                other.createdAt == createdAt) &&
+            (identical(other.updatedAt, updatedAt) ||
+                other.updatedAt == updatedAt));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, id, email, displayName);
+  int get hashCode =>
+      Object.hash(runtimeType, id, email, displayName, createdAt, updatedAt);
 
   /// Create a copy of AppUserEntity
   /// with the given fields replaced by the non-null parameter values.
@@ -183,6 +220,8 @@ abstract class _AppUserEntity implements AppUserEntity {
     required final AppUserIdValue id,
     required final EmailAddressValue email,
     required final DisplayNameValue displayName,
+    required final DateTime createdAt,
+    required final DateTime updatedAt,
   }) = _$AppUserEntityImpl;
 
   @override
@@ -191,6 +230,10 @@ abstract class _AppUserEntity implements AppUserEntity {
   EmailAddressValue get email;
   @override
   DisplayNameValue get displayName;
+  @override
+  DateTime get createdAt;
+  @override
+  DateTime get updatedAt;
 
   /// Create a copy of AppUserEntity
   /// with the given fields replaced by the non-null parameter values.
