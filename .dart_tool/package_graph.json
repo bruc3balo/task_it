@@ -7,7 +7,9 @@
     "base_task_board",
     "core",
     "task_it_workspace",
+    "taskdoer_presentation_task_board",
     "taskdoer_task_board",
+    "taskdoer_task_board_domain",
     "taskmanager_task_board",
     "taskmanger_taskboard_domain",
     "taskmnager_taskboard_presentation"
@@ -105,14 +107,34 @@
     {
       "name": "taskdoer_task_board",
       "version": "1.0.0",
+      "dependencies": [],
+      "devDependencies": [
+        "lints",
+        "test"
+      ]
+    },
+    {
+      "name": "taskdoer_task_board_domain",
+      "version": "1.0.0",
       "dependencies": [
-        "base",
-        "base_task_board",
-        "core"
+        "base_task_board"
       ],
       "devDependencies": [
         "lints",
         "test"
+      ]
+    },
+    {
+      "name": "taskdoer_presentation_task_board",
+      "version": "0.0.1",
+      "dependencies": [
+        "bloc",
+        "flutter",
+        "taskdoer_task_board_domain"
+      ],
+      "devDependencies": [
+        "flutter_lints",
+        "flutter_test"
       ]
     },
     {

@@ -15,7 +15,7 @@ class CreateANewTaskUseCase extends BaseUseCase<TaskEntity, TaskForm> {
     try {
 
       //TODO: Get createdBy from local storage
-       return await _taskManagerRepository.createANewTask(CreateNewTaskForm(createdBy: createdBy, title: params.title, description: params.description));
+       return await _taskManagerRepository.createANewTask(CreateNewTaskForm(createdBy: h, title: params.title, description: params.description));
     } catch(e, trace) {
       return FailedResult(AppFailure(trace: trace));
     }

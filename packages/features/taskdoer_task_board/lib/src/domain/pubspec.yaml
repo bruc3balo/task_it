@@ -1,0 +1,17 @@
+name: taskdoer_task_board_domain
+description: Domain layer for the taskdoer_task_board package.
+version: 1.0.0
+publish_to: none
+resolution: workspace
+
+environment:
+  sdk: ^3.10.7
+
+# Add regular dependencies here.
+dependencies:
+  base_task_board:
+    path: ../../../../base_task_board
+
+dev_dependencies:
+  lints: ^6.0.0
+  test: ^1.25.6

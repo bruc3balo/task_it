@@ -1,22 +1,15 @@
 name: taskdoer_task_board
-description: Doer task manager module
+description: A starting point for Dart libraries or applications.
 version: 1.0.0
-publish_to: none
 resolution: workspace
+publish_to: none
 
 environment:
   sdk: ^3.10.7
 
 # Add regular dependencies here.
 dependencies:
-  base:
-    path: ../../base
-
-  core:
-    path: ../../core
-
-  base_task_board:
-    path: ../base_task_board
+  # path: ^1.9.0
 
 dev_dependencies:
   lints: ^6.0.0

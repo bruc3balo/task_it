@@ -560,6 +560,18 @@
       "languageVersion": "3.10"
     },
     {
+      "name": "taskdoer_task_board_domain",
+      "rootUri": "../packages/features/taskdoer_task_board/lib/src/domain",
+      "packageUri": "lib/",
+      "languageVersion": "3.10"
+    },
+    {
+      "name": "taskdoer_presentation_task_board",
+      "rootUri": "../packages/features/taskdoer_task_board/lib/src/presentation",
+      "packageUri": "lib/",
+      "languageVersion": "3.10"
+    },
+    {
       "name": "taskmanager_task_board",
       "rootUri": "../packages/features/taskmanager_task_board",
       "packageUri": "lib/",
