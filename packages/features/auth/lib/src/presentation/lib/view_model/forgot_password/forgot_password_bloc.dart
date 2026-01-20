@@ -1,6 +1,7 @@
 import 'package:auth_domain/domain.dart';
 import 'package:base/base.dart';
 import 'package:bloc/bloc.dart';
+import 'package:core/core.dart';
 import 'package:meta/meta.dart';
 
 part 'forgot_password_event.dart';

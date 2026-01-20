@@ -1,6 +1,7 @@
 import 'package:auth_domain/domain.dart';
 import 'package:base/base.dart';
 import 'package:bloc/bloc.dart';
+import 'package:core/core.dart';
 import 'package:meta/meta.dart';
 
 part 'sign_up_event.dart';
@@ -20,14 +21,14 @@ class SignUpBloc extends Bloc<SignUpEvent, SignUpState> {
       emit(LoadingSignUpState());
 
       var signUpResult = await _signUpUseCase.execute(
-        params: CreateAccountForm(displayName: event.displayName, email: event.email, password: event.password),
+        params: SignUpForm(email: event.email, password: event.password),
       );
 
       switch (signUpResult) {
-        case FailedResult<AppUserEntity>():
+        case FailedResult<AppUserIdValue>():
           emit(ErrorSignUpState(signUpResult.failure));
           break;
-        case SuccessResult<AppUserEntity>():
+        case SuccessResult<AppUserIdValue>():
           emit(SuccessSignUpState(user: signUpResult.result));
           break;
       }
@@ -35,4 +36,5 @@ class SignUpBloc extends Bloc<SignUpEvent, SignUpState> {
       emit(ErrorSignUpState(AppFailure(trace: trace)));
     }
   }
+
 }

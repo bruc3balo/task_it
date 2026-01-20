@@ -8,7 +8,7 @@ final class InitialSignUpState extends SignUpState {}
 final class LoadingSignUpState extends SignUpState {}
 
 final class SuccessSignUpState extends SignUpState {
-  final AppUserEntity user;
+  final AppUserIdValue user;
 
   SuccessSignUpState({required this.user});
 }

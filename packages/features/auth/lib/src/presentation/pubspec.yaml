@@ -13,6 +13,8 @@ dependencies:
     sdk: flutter
   auth_domain:
     path: ../domain
+  core:
+    path: ../../../../../core
   bloc:
 
 dev_dependencies:

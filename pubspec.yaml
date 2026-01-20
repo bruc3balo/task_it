@@ -8,8 +8,14 @@ workspace:
 #  - apps/taskmanager
   - packages/base # If you still have this, otherwise remove
   - packages/core
+  - packages/core/lib/src/data_storage
+  - packages/core/lib/src/app_log
+  - packages/core/lib/src/connectivity
+    #Platform
+  - packages/platform/platform_hive_data_storage
 #  - packages/ui_kit
   - packages/features/auth
+  - packages/features/auth/lib/src/data
   - packages/features/auth/lib/src/domain
   - packages/features/auth/lib/src/presentation
 #  - packages/features/reports

@@ -1,4 +1,4 @@
-import 'package:auth_domain/src/value_objects/email_address_value.dart';
+import 'package:core/src/foundation/auth/value_objects/email_address_value.dart';
 import 'package:auth_domain/src/repository/auth_repository.dart';
 import 'package:base/base.dart';
 

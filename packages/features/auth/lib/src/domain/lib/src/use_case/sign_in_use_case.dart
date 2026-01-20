@@ -1,8 +1,6 @@
-import 'package:auth_domain/src/entities/_entities.dart';
-import 'package:auth_domain/src/forms/_forms.dart';
-import 'package:auth_domain/src/value_objects/_value_objects.dart';
+
 import 'package:auth_domain/src/repository/_repository.dart';
-import 'package:base/base.dart';
+import 'package:core/core.dart';
 
 class SignInUseCase extends BaseUseCase<AppUserEntity, SignInForm> {
   final AuthRepository _authRepository;

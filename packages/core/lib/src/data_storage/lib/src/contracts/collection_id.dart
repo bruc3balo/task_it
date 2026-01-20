@@ -1,0 +1,1 @@
+typedef CollectionId = String;

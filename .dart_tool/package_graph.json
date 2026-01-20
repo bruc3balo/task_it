@@ -1,11 +1,16 @@
 {
   "roots": [
+    "app_log",
     "auth",
+    "auth_data",
     "auth_domain",
     "auth_presentation",
     "base",
     "base_task_board",
+    "connectivity",
     "core",
+    "data_storage",
+    "platform_hive_data_storage",
     "task_it_workspace",
     "taskdoer_presentation_task_board",
     "taskdoer_task_board",
@@ -34,7 +39,10 @@
       "name": "core",
       "version": "1.0.0",
       "dependencies": [
+        "app_log",
         "base",
+        "connectivity",
+        "data_storage",
         "freezed_annotation",
         "json_annotation"
       ],
@@ -42,6 +50,56 @@
         "build_runner",
         "freezed",
         "json_serializable",
+        "lints",
+        "test"
+      ]
+    },
+    {
+      "name": "data_storage",
+      "version": "1.0.0",
+      "dependencies": [
+        "base"
+      ],
+      "devDependencies": [
+        "lints",
+        "test"
+      ]
+    },
+    {
+      "name": "app_log",
+      "version": "1.0.0",
+      "dependencies": [
+        "logger"
+      ],
+      "devDependencies": [
+        "lints",
+        "test"
+      ]
+    },
+    {
+      "name": "connectivity",
+      "version": "1.0.0",
+      "dependencies": [
+        "app_log",
+        "injectable",
+        "internet_connection_checker"
+      ],
+      "devDependencies": [
+        "lints",
+        "test"
+      ]
+    },
+    {
+      "name": "platform_hive_data_storage",
+      "version": "1.0.0",
+      "dependencies": [
+        "app_log",
+        "base",
+        "data_storage",
+        "hive",
+        "injectable"
+      ],
+      "devDependencies": [
         "lints",
         "test"
       ]
@@ -57,6 +115,18 @@
         "build_runner",
         "freezed",
         "json_serializable",
+        "lints",
+        "test"
+      ]
+    },
+    {
+      "name": "auth_data",
+      "version": "1.0.0",
+      "dependencies": [
+        "auth_domain",
+        "core"
+      ],
+      "devDependencies": [
         "lints",
         "test"
       ]
@@ -81,6 +151,7 @@
       "dependencies": [
         "auth_domain",
         "bloc",
+        "core",
         "flutter"
       ],
       "devDependencies": [
@@ -343,6 +414,39 @@
     {
       "name": "json_annotation",
       "version": "4.9.0",
+      "dependencies": [
+        "meta"
+      ]
+    },
+    {
+      "name": "hive",
+      "version": "2.2.3",
+      "dependencies": [
+        "crypto",
+        "meta"
+      ]
+    },
+    {
+      "name": "injectable",
+      "version": "2.7.1+4",
+      "dependencies": [
+        "get_it",
+        "meta"
+      ]
+    },
+    {
+      "name": "internet_connection_checker",
+      "version": "3.0.1",
+      "dependencies": [
+        "connectivity_plus",
+        "equatable",
+        "flutter",
+        "http"
+      ]
+    },
+    {
+      "name": "logger",
+      "version": "2.6.2",
       "dependencies": [
         "meta"
       ]
@@ -898,6 +1002,36 @@
       "dependencies": []
     },
     {
+      "name": "get_it",
+      "version": "9.2.0",
+      "dependencies": [
+        "async",
+        "collection",
+        "meta"
+      ]
+    },
+    {
+      "name": "equatable",
+      "version": "2.0.8",
+      "dependencies": [
+        "collection",
+        "meta"
+      ]
+    },
+    {
+      "name": "connectivity_plus",
+      "version": "6.1.5",
+      "dependencies": [
+        "collection",
+        "connectivity_plus_platform_interface",
+        "flutter",
+        "flutter_web_plugins",
+        "meta",
+        "nm",
+        "web"
+      ]
+    },
+    {
       "name": "leak_tracker_testing",
       "version": "3.0.2",
       "dependencies": [
@@ -1022,9 +1156,71 @@
       ]
     },
     {
+      "name": "nm",
+      "version": "0.5.0",
+      "dependencies": [
+        "dbus"
+      ]
+    },
+    {
+      "name": "connectivity_plus_platform_interface",
+      "version": "2.0.1",
+      "dependencies": [
+        "flutter",
+        "meta",
+        "plugin_platform_interface"
+      ]
+    },
+    {
+      "name": "flutter_web_plugins",
+      "version": "0.0.0",
+      "dependencies": [
+        "flutter"
+      ]
+    },
+    {
       "name": "fixnum",
       "version": "1.1.1",
       "dependencies": []
+    },
+    {
+      "name": "dbus",
+      "version": "0.7.11",
+      "dependencies": [
+        "args",
+        "ffi",
+        "meta",
+        "xml"
+      ]
+    },
+    {
+      "name": "plugin_platform_interface",
+      "version": "2.1.8",
+      "dependencies": [
+        "meta"
+      ]
+    },
+    {
+      "name": "xml",
+      "version": "6.6.1",
+      "dependencies": [
+        "collection",
+        "meta",
+        "petitparser"
+      ]
+    },
+    {
+      "name": "ffi",
+      "version": "2.1.5",
+      "dependencies": []
+    },
+    {
+      "name": "petitparser",
+      "version": "7.0.1",
+      "dependencies": [
+        "collection",
+        "meta"
+      ]
     }
   ],
   "configVersion": 1

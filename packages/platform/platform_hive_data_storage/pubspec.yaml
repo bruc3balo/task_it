@@ -1,0 +1,23 @@
+name: platform_hive_data_storage
+description: Data storage implementation using hive
+version: 1.0.0
+publish_to: none
+resolution: workspace
+
+environment:
+  sdk: ^3.10.4
+
+dependencies:
+  injectable:
+  base:
+    path: ../../base
+  app_log:
+    path: ../../core/lib/src/app_log
+
+  data_storage:
+    path: ../../core/lib/src/data_storage
+  hive:
+
+dev_dependencies:
+  lints: ^6.0.0
+  test: ^1.25.6
