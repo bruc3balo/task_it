@@ -1,6 +1,8 @@
 import 'package:core/core.dart';
 import 'package:auth_domain/domain.dart';
+import 'package:injectable/injectable.dart';
 
+@LazySingleton()
 class GetCurrentUserUseCase extends BaseUseCase<AppUserEntity, dynamic> {
   final AppUserRepository _appUserRepository;
   final AppAuthenticatorService _authenticatorService;

@@ -1,6 +1,8 @@
 import 'package:core/core.dart';
 import 'package:auth_domain/src/repository/_repository.dart';
+import 'package:injectable/injectable.dart';
 
+@LazySingleton()
 class SignUpUseCase extends BaseUseCase<AppUserIdValue, SignUpForm> {
   final AuthRepository _authRepository;
 

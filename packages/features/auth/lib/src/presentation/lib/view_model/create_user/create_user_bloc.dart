@@ -1,12 +1,14 @@
 import 'package:bloc/bloc.dart';
 import 'package:core/core.dart';
 import 'package:auth_domain/domain.dart';
+import 'package:injectable/injectable.dart';
 import 'package:meta/meta.dart';
 
 part 'create_user_event.dart';
 
 part 'create_user_state.dart';
 
+@Injectable()
 class CreateUserBloc extends Bloc<CreateUserEvent, CreateUserState> {
   final GetCurrentUserUseCase _getCurrentUserUseCase;
   final CreateUserUseCase _createUserUseCase;

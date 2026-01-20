@@ -1,6 +1,8 @@
 import 'package:core/core.dart';
 import 'package:auth_domain/domain.dart';
+import 'package:injectable/injectable.dart';
 
+@LazySingleton(as: AppUserRepository)
 class AppUserRepositoryImpl extends AppUserRepository {
   final AppUserDataSource _appUserDataSource;
 

@@ -2,15 +2,14 @@ import 'package:auth_domain/domain.dart';
 import 'package:base/base.dart';
 import 'package:bloc/bloc.dart';
 import 'package:core/core.dart';
-import 'package:meta/meta.dart';
-import 'package:base/base.dart';
-import 'package:bloc/bloc.dart';
+import 'package:injectable/injectable.dart';
 import 'package:meta/meta.dart';
 
 part 'sign_in_event.dart';
 
 part 'sign_in_state.dart';
 
+@Injectable()
 class SignInBloc extends Bloc<SignInEvent, SignInState> {
   final SignInUseCase _signInUseCase;
 

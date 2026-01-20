@@ -1,7 +1,9 @@
 
 import 'package:core/core.dart';
 import 'package:auth_domain/domain.dart';
+import 'package:injectable/injectable.dart';
 
+@LazySingleton(as: AuthRepository)
 class AuthRepositoryImpl extends AuthRepository {
   final AppAuthenticatorService _authenticatorService;
 

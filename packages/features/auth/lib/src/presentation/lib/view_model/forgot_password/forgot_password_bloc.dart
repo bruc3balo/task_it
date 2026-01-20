@@ -2,11 +2,13 @@ import 'package:auth_domain/domain.dart';
 import 'package:base/base.dart';
 import 'package:bloc/bloc.dart';
 import 'package:core/core.dart';
+import 'package:injectable/injectable.dart';
 import 'package:meta/meta.dart';
 
 part 'forgot_password_event.dart';
 part 'forgot_password_state.dart';
 
+@Injectable()
 class ForgotPasswordBloc extends Bloc<ForgotPasswordEvent, ForgotPasswordState> {
   final InitiateForgotPasswordUseCase _initiateForgotPasswordUseCase;
 

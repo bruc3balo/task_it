@@ -12,6 +12,7 @@ dependencies:
     path: ../domain
   core:
     path: ../../../../../core
+  injectable:
 
 dev_dependencies:
   lints: ^6.0.0

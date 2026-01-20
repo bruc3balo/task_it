@@ -48,6 +48,9 @@
       <excludeFolder url="file://$MODULE_DIR$/packages/features/auth/lib/src/data/.dart_tool" />
       <excludeFolder url="file://$MODULE_DIR$/packages/features/auth/lib/src/data/.pub" />
       <excludeFolder url="file://$MODULE_DIR$/packages/features/auth/lib/src/data/build" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/features/auth/lib/src/domain/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/features/auth/lib/src/domain/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/features/auth/lib/src/domain/build" />
       <excludeFolder url="file://$MODULE_DIR$/packages/features/taskdoer_task_board/lib/src/domain/.dart_tool" />
       <excludeFolder url="file://$MODULE_DIR$/packages/features/taskdoer_task_board/lib/src/domain/.pub" />
       <excludeFolder url="file://$MODULE_DIR$/packages/features/taskdoer_task_board/lib/src/domain/build" />

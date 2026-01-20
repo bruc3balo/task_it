@@ -1,7 +1,9 @@
 import 'package:core/src/foundation/auth/value_objects/email_address_value.dart';
 import 'package:auth_domain/src/repository/auth_repository.dart';
 import 'package:base/base.dart';
+import 'package:injectable/injectable.dart';
 
+@LazySingleton()
 class InitiateForgotPasswordUseCase extends BaseUseCase<void, EmailAddressValue> {
   final AuthRepository _authRepository;
 
