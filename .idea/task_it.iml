@@ -24,6 +24,24 @@
       <excludeFolder url="file://$MODULE_DIR$/packages/features/taskdoer_task_board/.dart_tool" />
       <excludeFolder url="file://$MODULE_DIR$/packages/features/taskdoer_task_board/.pub" />
       <excludeFolder url="file://$MODULE_DIR$/packages/features/taskdoer_task_board/build" />
+      <excludeFolder url="file://$MODULE_DIR$/apps/taskdoer/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/apps/taskdoer/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/apps/taskdoer/build" />
+      <excludeFolder url="file://$MODULE_DIR$/apps/taskmanager/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/apps/taskmanager/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/apps/taskmanager/build" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/features/reports/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/features/reports/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/features/reports/build" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/features/taskmanager_task_board/lib/src/domain/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/features/taskmanager_task_board/lib/src/domain/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/features/taskmanager_task_board/lib/src/domain/build" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/features/taskmanager_task_board/lib/src/presentation/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/features/taskmanager_task_board/lib/src/presentation/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/features/taskmanager_task_board/lib/src/presentation/build" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/ui_kit/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/ui_kit/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/ui_kit/build" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

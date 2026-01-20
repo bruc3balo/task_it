@@ -1,8 +1,8 @@
 import 'package:base/base.dart';
 import 'package:base_task_board/task_board.dart';
-import 'package:taskmanager_task_board/src/domain/forms/create_new_task_form.dart';
+import 'package:taskmanger_taskboard_domain/src/forms/_forms.dart';
 
 abstract class TaskManagerRepository {
   Future<TaskResult<TaskEntity>> createANewTask(CreateNewTaskForm form);
-  Future<TaskResult<TaskEntity>> getTasksCreatedByUser(TaskManagerIdValue id);
+  Future<TaskResult<List<TaskEntity>>> getTasksCreatedByUser<Page>(TaskManagerIdValue id, BasePage<Page> page);
 }
