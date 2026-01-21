@@ -1,4 +1,4 @@
-name: data
+name: taskdoer_task_board_data
 description: A starting point for Dart libraries or applications.
 version: 1.0.0
 publish_to: none

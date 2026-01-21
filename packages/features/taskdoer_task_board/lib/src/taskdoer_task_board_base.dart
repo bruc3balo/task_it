@@ -1,6 +1,3 @@
-// TODO: Put public facing types in this file.
-
-/// Checks if you are awesome. Spoiler: you are.
-class Awesome {
-  bool get isAwesome => true;
-}
+export 'package:taskdoer_task_board_domain/domain.dart';
+export 'package:taskdoer_task_board_data/data.dart';
+export 'package:taskdoer_task_board_presentation/presentation.dart';

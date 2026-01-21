@@ -9,7 +9,16 @@ environment:
 
 # Add regular dependencies here.
 dependencies:
-  # path: ^1.9.0
+
+  taskdoer_task_board_data:
+    path: lib/src/data
+
+  taskdoer_task_board_domain:
+    path: lib/src/domain
+
+  taskdoer_task_board_presentation:
+    path: lib/src/data
+
 
 dev_dependencies:
   lints: ^6.0.0

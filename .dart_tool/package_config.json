@@ -356,6 +356,12 @@
       "languageVersion": "3.8"
     },
     {
+      "name": "injectable_generator",
+      "rootUri": "file:///home/qwrty/.pub-cache/hosted/pub.dev/injectable_generator-2.7.0",
+      "packageUri": "lib/",
+      "languageVersion": "3.0"
+    },
+    {
       "name": "internet_connection_checker",
       "rootUri": "file:///home/qwrty/.pub-cache/hosted/pub.dev/internet_connection_checker-3.0.1",
       "packageUri": "lib/",
@@ -516,6 +522,12 @@
       "rootUri": "file:///home/qwrty/.pub-cache/hosted/pub.dev/pubspec_parse-1.5.0",
       "packageUri": "lib/",
       "languageVersion": "3.6"
+    },
+    {
+      "name": "recase",
+      "rootUri": "file:///home/qwrty/.pub-cache/hosted/pub.dev/recase-4.1.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
     },
     {
       "name": "shelf",
@@ -800,7 +812,7 @@
       "languageVersion": "3.10"
     },
     {
-      "name": "data",
+      "name": "taskdoer_task_board_data",
       "rootUri": "../packages/features/taskdoer_task_board/lib/src/data",
       "packageUri": "lib/",
       "languageVersion": "3.10"
@@ -812,7 +824,7 @@
       "languageVersion": "3.10"
     },
     {
-      "name": "taskdoer_presentation_task_board",
+      "name": "taskdoer_task_board_presentation",
       "rootUri": "../packages/features/taskdoer_task_board/lib/src/presentation",
       "packageUri": "lib/",
       "languageVersion": "3.10"

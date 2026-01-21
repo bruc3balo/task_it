@@ -8,16 +8,16 @@
     "base",
     "connectivity",
     "core",
-    "data",
     "data_storage",
     "platform_firebase_authentication",
     "platform_firestore_data_storage",
     "platform_hive_data_storage",
     "platform_internet_checker_connectivity",
     "task_it_workspace",
-    "taskdoer_presentation_task_board",
     "taskdoer_task_board",
+    "taskdoer_task_board_data",
     "taskdoer_task_board_domain",
+    "taskdoer_task_board_presentation",
     "taskmanager",
     "taskmanager_task_board",
     "taskmanager_task_board_data",
@@ -38,11 +38,13 @@
         "auth",
         "firebase_core",
         "flutter",
+        "get_it",
         "injectable",
         "taskmanager_task_board"
       ],
       "devDependencies": [
-        "build_runner"
+        "build_runner",
+        "injectable_generator"
       ]
     },
     {
@@ -222,14 +224,18 @@
     {
       "name": "taskdoer_task_board",
       "version": "1.0.0",
-      "dependencies": [],
+      "dependencies": [
+        "taskdoer_task_board_data",
+        "taskdoer_task_board_domain",
+        "taskdoer_task_board_presentation"
+      ],
       "devDependencies": [
         "lints",
         "test"
       ]
     },
     {
-      "name": "data",
+      "name": "taskdoer_task_board_data",
       "version": "1.0.0",
       "dependencies": [
         "injectable",
@@ -252,7 +258,7 @@
       ]
     },
     {
-      "name": "taskdoer_presentation_task_board",
+      "name": "taskdoer_task_board_presentation",
       "version": "0.0.1",
       "dependencies": [
         "bloc",
@@ -589,6 +595,23 @@
         "base",
         "freezed_annotation",
         "json_annotation"
+      ]
+    },
+    {
+      "name": "injectable_generator",
+      "version": "2.7.0",
+      "dependencies": [
+        "analyzer",
+        "build",
+        "code_builder",
+        "collection",
+        "dart_style",
+        "glob",
+        "injectable",
+        "meta",
+        "path",
+        "recase",
+        "source_gen"
       ]
     },
     {
@@ -1255,6 +1278,11 @@
         "nm",
         "web"
       ]
+    },
+    {
+      "name": "recase",
+      "version": "4.1.0",
+      "dependencies": []
     },
     {
       "name": "firebase_core_web",
