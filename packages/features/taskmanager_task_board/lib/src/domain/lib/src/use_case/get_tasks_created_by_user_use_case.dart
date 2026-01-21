@@ -1,5 +1,4 @@
 import 'package:core/core.dart';
-import 'package:base_task_board/task_board.dart';
 import 'package:taskmanger_taskboard_domain/src/forms/_forms.dart';
 import 'package:taskmanger_taskboard_domain/src/repository/_repository.dart';
 

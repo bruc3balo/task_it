@@ -1,6 +1,6 @@
 import 'dart:async';
 
-import 'package:app_log/app_log.dart';
+import 'package:core/core.dart';
 import 'package:connectivity/src/service/connectivity_service.dart';
 import 'package:injectable/injectable.dart';
 import 'package:internet_connection_checker/internet_connection_checker.dart';

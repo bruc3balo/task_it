@@ -23,10 +23,11 @@ workspace:
   - packages/features/auth/lib/src/domain
   - packages/features/auth/lib/src/presentation
 #  - packages/features/reports
-  - packages/features/base_task_board
   - packages/features/taskdoer_task_board
+  - packages/features/taskdoer_task_board/lib/src/data
   - packages/features/taskdoer_task_board/lib/src/domain
   - packages/features/taskdoer_task_board/lib/src/presentation
   - packages/features/taskmanager_task_board
+  - packages/features/taskmanager_task_board/lib/src/data
   - packages/features/taskmanager_task_board/lib/src/domain
   - packages/features/taskmanager_task_board/lib/src/presentation

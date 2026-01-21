@@ -10,8 +10,6 @@ environment:
 dependencies:
   base:
     path: ../base
-  json_annotation: ^4.8.1
-  freezed_annotation: ^2.4.1
 
   app_log:
     path: lib/src/app_log
@@ -22,9 +20,9 @@ dependencies:
   data_storage:
     path: lib/src/data_storage
 
+  foundation:
+    path: lib/src/foundation
+
 dev_dependencies:
   lints: ^6.0.0
   test: ^1.25.6
-  build_runner: ^2.4.6
-  json_serializable: ^6.7.1
-  freezed: ^2.4.1

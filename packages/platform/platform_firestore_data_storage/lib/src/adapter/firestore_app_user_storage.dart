@@ -3,6 +3,7 @@ import 'package:core/core.dart';
 import 'package:injectable/injectable.dart';
 import 'package:platform_firestore_data_storage/src/documents/app_user_document.dart';
 import 'package:platform_firestore_data_storage/src/mapper/app_user_mapper.dart';
+import 'package:platform_firestore_data_storage/src/utils/handle_firestore_exception.dart';
 
 @LazySingleton(as: AppUserDataSource)
 class FirestoreAppUserDataStore extends AppUserDataSource {
@@ -28,7 +29,7 @@ class FirestoreAppUserDataStore extends AppUserDataSource {
       final AppUserEntity userEntity = _userMapper.toEntity(userDoc);
       return SuccessResult(result: userEntity, message: "User found");
     } on FirebaseException catch (e, trace) {
-      return _handleFirestoreError(e, trace);
+      return handleFirestoreError(e, trace);
     } catch (e, trace) {
       return FailedResult(AppFailure(message: e.toString(), failureType: FailureType.unknown, trace: trace));
     }
@@ -48,7 +49,7 @@ class FirestoreAppUserDataStore extends AppUserDataSource {
       final AppUserEntity userEntity = _userMapper.toEntity(userDoc);
       return SuccessResult(result: userEntity, message: "User found");
     } on FirebaseException catch (e, trace) {
-      return _handleFirestoreError(e, trace);
+      return handleFirestoreError(e, trace);
     } catch (e, trace) {
       return FailedResult(AppFailure(message: e.toString(), failureType: FailureType.unknown, trace: trace));
     }
@@ -60,40 +61,9 @@ class FirestoreAppUserDataStore extends AppUserDataSource {
       await _userCollection.doc(user.id.value).set(_userMapper.toDocument(user));
       return SuccessResult(result: user, message: "User saved");
     } on FirebaseException catch (e, trace) {
-      return _handleFirestoreError(e, trace);
+      return handleFirestoreError(e, trace);
     } catch (e, trace) {
       return FailedResult(AppFailure(message: e.toString(), failureType: FailureType.unknown, trace: trace));
     }
-  }
-
-  /// Helper to map Firebase codes to your FailureType enum
-  FailedResult<T> _handleFirestoreError<T>(FirebaseException e, StackTrace trace) {
-    FailureType type;
-
-    switch (e.code) {
-      case 'permission-denied':
-        type = FailureType.permission;
-        break;
-      case 'unavailable': // Offline or service down
-        type = FailureType.network;
-        break;
-      case 'already-exists':
-        type = FailureType.duplicate;
-        break;
-      case 'not-found':
-        type = FailureType.notFound;
-        break;
-      case 'failed-precondition': // Often means a missing index or query issue
-        type = FailureType.state;
-        break;
-      case 'aborted': // Transaction issues
-        type = FailureType.state;
-        break;
-      default:
-        // 'data-loss', 'internal', 'invalid-argument', 'resource-exhausted', etc.
-        type = FailureType.database;
-    }
-
-    return FailedResult(AppFailure(message: e.message ?? "Firestore Error: ${e.code}", failureType: type, trace: trace));
   }
 }

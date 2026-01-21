@@ -1,5 +1,4 @@
 import 'package:core/core.dart';
-import 'package:base_task_board/task_board.dart';
 import 'package:taskmanger_taskboard_domain/src/forms/_forms.dart';
 import 'package:taskmanger_taskboard_domain/src/repository/_repository.dart';
 
@@ -20,7 +19,12 @@ class CreateANewTaskUseCase extends BaseUseCase<TaskEntity, TaskForm> {
           return FailedResult.fromFailure(currentUserResult);
         case SuccessResult<AuthUser>():
           return await _taskManagerRepository.createANewTask(
-            CreateNewTaskForm(createdBy: TaskManagerIdValue(currentUserResult.result.id.value), title: params.title, description: params.description),
+            CreateNewTaskForm(
+              createdBy: TaskManagerIdValue(currentUserResult.result.id.value),
+              title: params.title,
+              description: params.description,
+              dueAt: params.dueAt,
+            ),
           );
       }
     } catch (e, trace) {

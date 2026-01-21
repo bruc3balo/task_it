@@ -12,6 +12,7 @@ dependencies:
   flutter:
     sdk: flutter
 
+  injectable:
   taskdoer_task_board_domain:
     path: ../domain
 

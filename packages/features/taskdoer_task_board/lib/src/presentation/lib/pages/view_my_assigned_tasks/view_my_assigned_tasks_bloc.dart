@@ -2,14 +2,15 @@ import 'dart:collection';
 
 import 'package:base/src/result/task_result.dart';
 import 'package:bloc/bloc.dart';
+import 'package:injectable/injectable.dart';
 import 'package:meta/meta.dart';
-import 'package:base_task_board/task_board.dart';
 import 'package:taskdoer_task_board_domain/domain.dart';
 
 part 'view_my_assigned_tasks_event.dart';
 
 part 'view_my_assigned_tasks_state.dart';
 
+@Injectable()
 class ViewMyAssignedTasksBloc extends Bloc<ViewMyAssignedTasksEvent, ViewMyAssignedTasksState> {
   final GetTasksAssignedToUserUseCase _getTasksAssignedToUserUseCase;
   final SplayTreeSet<TaskEntity> _taskSet = SplayTreeSet((a,b) => a.createdAt.compareTo(b.createdAt));

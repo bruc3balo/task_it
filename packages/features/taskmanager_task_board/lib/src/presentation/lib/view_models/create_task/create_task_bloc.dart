@@ -1,12 +1,14 @@
 import 'package:bloc/bloc.dart';
+import 'package:injectable/injectable.dart';
 import 'package:meta/meta.dart';
-import 'package:base_task_board/task_board.dart';
 import 'package:base/base.dart';
 import 'package:taskmanger_taskboard_domain/domain.dart';
 
 part 'create_task_event.dart';
+
 part 'create_task_state.dart';
 
+@Injectable()
 class CreateTaskBloc extends Bloc<CreateTaskEvent, CreateTaskState> {
   final CreateANewTaskUseCase _createANewTaskUseCase;
 
@@ -19,7 +21,7 @@ class CreateTaskBloc extends Bloc<CreateTaskEvent, CreateTaskState> {
 
     try {
       var createTaskState = await _createANewTaskUseCase.execute(
-        params: TaskForm(title: event.title, description: event.description),
+        params: TaskForm(title: event.title, description: event.description, dueAt: event.dueAt),
       );
 
       switch (createTaskState) {

@@ -2,14 +2,15 @@ import 'dart:collection';
 
 import 'package:base/src/result/task_result.dart';
 import 'package:bloc/bloc.dart';
+import 'package:injectable/injectable.dart';
 import 'package:meta/meta.dart';
-import 'package:base_task_board/task_board.dart';
 import 'package:taskmanger_taskboard_domain/domain.dart';
 
 part 'view_my_created_tasks_event.dart';
 
 part 'view_my_created_tasks_state.dart';
 
+@Injectable()
 class ViewMyCreatedTasksBloc extends Bloc<ViewMyCreatedTasksEvent, ViewMyCreatedTasksState> {
   final GetTasksCreatedByUserUseCase _getTasksCreatedByUserUseCase;
   final SplayTreeSet<TaskEntity> _taskSet = SplayTreeSet((a, b) => a.createdAt.compareTo(b.createdAt));

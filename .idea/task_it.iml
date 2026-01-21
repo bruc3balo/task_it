@@ -69,6 +69,24 @@
       <excludeFolder url="file://$MODULE_DIR$/packages/platform/platform_internet_checker_connectivity/.dart_tool" />
       <excludeFolder url="file://$MODULE_DIR$/packages/platform/platform_internet_checker_connectivity/.pub" />
       <excludeFolder url="file://$MODULE_DIR$/packages/platform/platform_internet_checker_connectivity/build" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/core/lib/src/app_log/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/core/lib/src/app_log/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/core/lib/src/app_log/build" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/core/lib/src/data_storage/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/core/lib/src/data_storage/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/core/lib/src/data_storage/build" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/core/lib/src/foundation/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/core/lib/src/foundation/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/core/lib/src/foundation/build" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/features/auth/lib/src/presentation/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/features/auth/lib/src/presentation/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/features/auth/lib/src/presentation/build" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/features/taskdoer_task_board/lib/src/data/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/features/taskdoer_task_board/lib/src/data/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/features/taskdoer_task_board/lib/src/data/build" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/features/taskmanager_task_board/lib/src/data/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/features/taskmanager_task_board/lib/src/data/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/features/taskmanager_task_board/lib/src/data/build" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

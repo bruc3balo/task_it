@@ -13,8 +13,7 @@ dependencies:
     path: ../../base
   core:
     path: ../../core
-  base_task_board:
-    path: ../base_task_board
+  injectable:
 
 dev_dependencies:
   lints: ^6.0.0

@@ -6,9 +6,9 @@
     "auth_domain",
     "auth_presentation",
     "base",
-    "base_task_board",
     "connectivity",
     "core",
+    "data",
     "data_storage",
     "platform_firebase_authentication",
     "platform_firestore_data_storage",
@@ -19,6 +19,7 @@
     "taskdoer_task_board",
     "taskdoer_task_board_domain",
     "taskmanager_task_board",
+    "taskmanager_task_board_data",
     "taskmanger_taskboard_domain",
     "taskmnager_taskboard_presentation"
   ],
@@ -46,13 +47,9 @@
         "base",
         "connectivity",
         "data_storage",
-        "freezed_annotation",
-        "json_annotation"
+        "foundation"
       ],
       "devDependencies": [
-        "build_runner",
-        "freezed",
-        "json_serializable",
         "lints",
         "test"
       ]
@@ -206,22 +203,6 @@
       ]
     },
     {
-      "name": "base_task_board",
-      "version": "1.0.0",
-      "dependencies": [
-        "base",
-        "freezed_annotation",
-        "json_annotation"
-      ],
-      "devDependencies": [
-        "build_runner",
-        "freezed",
-        "json_serializable",
-        "lints",
-        "test"
-      ]
-    },
-    {
       "name": "taskdoer_task_board",
       "version": "1.0.0",
       "dependencies": [],
@@ -231,10 +212,22 @@
       ]
     },
     {
+      "name": "data",
+      "version": "1.0.0",
+      "dependencies": [
+        "injectable",
+        "taskdoer_task_board_domain"
+      ],
+      "devDependencies": [
+        "lints",
+        "test"
+      ]
+    },
+    {
       "name": "taskdoer_task_board_domain",
       "version": "1.0.0",
       "dependencies": [
-        "base_task_board"
+        "core"
       ],
       "devDependencies": [
         "lints",
@@ -247,6 +240,7 @@
       "dependencies": [
         "bloc",
         "flutter",
+        "injectable",
         "taskdoer_task_board_domain"
       ],
       "devDependencies": [
@@ -259,8 +253,21 @@
       "version": "1.0.0",
       "dependencies": [
         "base",
-        "base_task_board",
-        "core"
+        "core",
+        "injectable"
+      ],
+      "devDependencies": [
+        "lints",
+        "test"
+      ]
+    },
+    {
+      "name": "taskmanager_task_board_data",
+      "version": "1.0.0",
+      "dependencies": [
+        "injectable",
+        "taskmanger_taskboard_domain",
+        "uuid"
       ],
       "devDependencies": [
         "lints",
@@ -271,7 +278,7 @@
       "name": "taskmanger_taskboard_domain",
       "version": "1.0.0",
       "dependencies": [
-        "base_task_board"
+        "core"
       ],
       "devDependencies": [
         "lints",
@@ -282,20 +289,14 @@
       "name": "taskmnager_taskboard_presentation",
       "version": "0.0.1",
       "dependencies": [
-        "flutter"
+        "bloc",
+        "core",
+        "flutter",
+        "injectable"
       ],
       "devDependencies": [
-        "base_task_board",
-        "bloc",
         "flutter_lints",
         "flutter_test"
-      ]
-    },
-    {
-      "name": "bloc",
-      "version": "9.2.0",
-      "dependencies": [
-        "meta"
       ]
     },
     {
@@ -321,6 +322,21 @@
         "stream_channel",
         "test_api",
         "vector_math"
+      ]
+    },
+    {
+      "name": "bloc",
+      "version": "9.2.0",
+      "dependencies": [
+        "meta"
+      ]
+    },
+    {
+      "name": "injectable",
+      "version": "2.7.1+4",
+      "dependencies": [
+        "get_it",
+        "meta"
       ]
     },
     {
@@ -371,6 +387,31 @@
       "name": "lints",
       "version": "6.0.0",
       "dependencies": []
+    },
+    {
+      "name": "uuid",
+      "version": "4.5.2",
+      "dependencies": [
+        "crypto",
+        "fixnum",
+        "meta"
+      ]
+    },
+    {
+      "name": "freezed_annotation",
+      "version": "2.4.4",
+      "dependencies": [
+        "collection",
+        "json_annotation",
+        "meta"
+      ]
+    },
+    {
+      "name": "json_annotation",
+      "version": "4.9.0",
+      "dependencies": [
+        "meta"
+      ]
     },
     {
       "name": "freezed",
@@ -449,30 +490,6 @@
       ]
     },
     {
-      "name": "freezed_annotation",
-      "version": "2.4.4",
-      "dependencies": [
-        "collection",
-        "json_annotation",
-        "meta"
-      ]
-    },
-    {
-      "name": "json_annotation",
-      "version": "4.9.0",
-      "dependencies": [
-        "meta"
-      ]
-    },
-    {
-      "name": "injectable",
-      "version": "2.7.1+4",
-      "dependencies": [
-        "get_it",
-        "meta"
-      ]
-    },
-    {
       "name": "cloud_firestore",
       "version": "6.1.2",
       "dependencies": [
@@ -523,9 +540,13 @@
       ]
     },
     {
-      "name": "meta",
-      "version": "1.17.0",
-      "dependencies": []
+      "name": "foundation",
+      "version": "1.0.0",
+      "dependencies": [
+        "base",
+        "freezed_annotation",
+        "json_annotation"
+      ]
     },
     {
       "name": "stream_channel",
@@ -533,6 +554,11 @@
       "dependencies": [
         "async"
       ]
+    },
+    {
+      "name": "meta",
+      "version": "1.17.0",
+      "dependencies": []
     },
     {
       "name": "collection",
@@ -604,6 +630,15 @@
         "stream_channel",
         "string_scanner",
         "term_glyph"
+      ]
+    },
+    {
+      "name": "get_it",
+      "version": "9.2.0",
+      "dependencies": [
+        "async",
+        "collection",
+        "meta"
       ]
     },
     {
@@ -827,6 +862,18 @@
       ]
     },
     {
+      "name": "fixnum",
+      "version": "1.1.1",
+      "dependencies": []
+    },
+    {
+      "name": "crypto",
+      "version": "3.0.7",
+      "dependencies": [
+        "typed_data"
+      ]
+    },
+    {
       "name": "dart_style",
       "version": "3.1.1",
       "dependencies": [
@@ -984,13 +1031,6 @@
       ]
     },
     {
-      "name": "crypto",
-      "version": "3.0.7",
-      "dependencies": [
-        "typed_data"
-      ]
-    },
-    {
       "name": "code_builder",
       "version": "4.11.1",
       "dependencies": [
@@ -1071,15 +1111,6 @@
       "name": "args",
       "version": "2.7.0",
       "dependencies": []
-    },
-    {
-      "name": "get_it",
-      "version": "9.2.0",
-      "dependencies": [
-        "async",
-        "collection",
-        "meta"
-      ]
     },
     {
       "name": "firebase_core_platform_interface",
@@ -1350,11 +1381,6 @@
         "meta",
         "plugin_platform_interface"
       ]
-    },
-    {
-      "name": "fixnum",
-      "version": "1.1.1",
-      "dependencies": []
     },
     {
       "name": "dbus",
