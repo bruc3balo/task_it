@@ -13,10 +13,16 @@ dependencies:
     sdk: flutter
   auth_domain:
     path: ../domain
+
   core:
     path: ../../../../../core
-  bloc:
-  injectable: 
+
+  ui_kit:
+    path: ../../../../../ui_kit
+
+  flutter_bloc:
+  injectable:
+  get_it:
 
 dev_dependencies:
   flutter_test:

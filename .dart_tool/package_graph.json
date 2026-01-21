@@ -18,6 +18,7 @@
     "taskdoer_presentation_task_board",
     "taskdoer_task_board",
     "taskdoer_task_board_domain",
+    "taskmanager",
     "taskmanager_task_board",
     "taskmanager_task_board_data",
     "taskmanger_taskboard_domain",
@@ -29,6 +30,20 @@
       "version": "0.0.0",
       "dependencies": [],
       "devDependencies": []
+    },
+    {
+      "name": "taskmanager",
+      "version": "1.0.0+1",
+      "dependencies": [
+        "auth",
+        "firebase_core",
+        "flutter",
+        "injectable",
+        "taskmanager_task_board"
+      ],
+      "devDependencies": [
+        "build_runner"
+      ]
     },
     {
       "name": "base",
@@ -192,10 +207,12 @@
       "version": "0.0.1",
       "dependencies": [
         "auth_domain",
-        "bloc",
         "core",
         "flutter",
-        "injectable"
+        "flutter_bloc",
+        "get_it",
+        "injectable",
+        "ui_kit"
       ],
       "devDependencies": [
         "flutter_lints",
@@ -398,6 +415,32 @@
       ]
     },
     {
+      "name": "get_it",
+      "version": "9.2.0",
+      "dependencies": [
+        "async",
+        "collection",
+        "meta"
+      ]
+    },
+    {
+      "name": "flutter_bloc",
+      "version": "9.1.1",
+      "dependencies": [
+        "bloc",
+        "flutter",
+        "provider"
+      ]
+    },
+    {
+      "name": "ui_kit",
+      "version": "0.0.1",
+      "dependencies": [
+        "flutter",
+        "loading_animation_widget"
+      ]
+    },
+    {
       "name": "freezed_annotation",
       "version": "2.4.4",
       "dependencies": [
@@ -549,6 +592,16 @@
       ]
     },
     {
+      "name": "firebase_core",
+      "version": "4.4.0",
+      "dependencies": [
+        "firebase_core_platform_interface",
+        "firebase_core_web",
+        "flutter",
+        "meta"
+      ]
+    },
+    {
       "name": "stream_channel",
       "version": "2.1.4",
       "dependencies": [
@@ -630,15 +683,6 @@
         "stream_channel",
         "string_scanner",
         "term_glyph"
-      ]
-    },
-    {
-      "name": "get_it",
-      "version": "9.2.0",
-      "dependencies": [
-        "async",
-        "collection",
-        "meta"
       ]
     },
     {
@@ -871,6 +915,22 @@
       "version": "3.0.7",
       "dependencies": [
         "typed_data"
+      ]
+    },
+    {
+      "name": "provider",
+      "version": "6.1.5+1",
+      "dependencies": [
+        "collection",
+        "flutter",
+        "nested"
+      ]
+    },
+    {
+      "name": "loading_animation_widget",
+      "version": "1.3.0",
+      "dependencies": [
+        "flutter"
       ]
     },
     {
@@ -1124,16 +1184,6 @@
       ]
     },
     {
-      "name": "firebase_core",
-      "version": "4.4.0",
-      "dependencies": [
-        "firebase_core_platform_interface",
-        "firebase_core_web",
-        "flutter",
-        "meta"
-      ]
-    },
-    {
       "name": "cloud_firestore_web",
       "version": "5.1.2",
       "dependencies": [
@@ -1203,6 +1253,17 @@
         "flutter_web_plugins",
         "meta",
         "nm",
+        "web"
+      ]
+    },
+    {
+      "name": "firebase_core_web",
+      "version": "3.4.0",
+      "dependencies": [
+        "firebase_core_platform_interface",
+        "flutter",
+        "flutter_web_plugins",
+        "meta",
         "web"
       ]
     },
@@ -1299,6 +1360,13 @@
       ]
     },
     {
+      "name": "nested",
+      "version": "1.0.0",
+      "dependencies": [
+        "flutter"
+      ]
+    },
+    {
       "name": "checked_yaml",
       "version": "2.0.4",
       "dependencies": [
@@ -1335,17 +1403,6 @@
       "version": "2.1.8",
       "dependencies": [
         "meta"
-      ]
-    },
-    {
-      "name": "firebase_core_web",
-      "version": "3.4.0",
-      "dependencies": [
-        "firebase_core_platform_interface",
-        "flutter",
-        "flutter_web_plugins",
-        "meta",
-        "web"
       ]
     },
     {

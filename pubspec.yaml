@@ -5,7 +5,7 @@ environment:
 
 workspace:
 #  - apps/taskdoer
-#  - apps/taskmanager
+  - apps/taskmanager
   - packages/base # If you still have this, otherwise remove
   - packages/core
   - packages/core/lib/src/data_storage

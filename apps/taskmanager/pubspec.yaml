@@ -1,0 +1,28 @@
+name: taskmanager
+description: Task manager application
+publish_to: none
+resolution: workspace
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.10.7
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  auth:
+    path: ../../packages/features/auth
+
+  taskmanager_task_board:
+    path: ../../packages/features/taskmanager_task_board
+
+  injectable:
+  firebase_core:
+
+dev_dependencies:
+  build_runner:
+
+
+flutter:
+  uses-material-design: true
