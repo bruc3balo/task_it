@@ -38,7 +38,9 @@
         "auth",
         "firebase_core",
         "flutter",
+        "flutter_bloc",
         "get_it",
+        "go_router",
         "injectable",
         "platform_firebase_authentication",
         "platform_firestore_data_storage",
@@ -629,6 +631,17 @@
         "base",
         "freezed_annotation",
         "json_annotation"
+      ]
+    },
+    {
+      "name": "go_router",
+      "version": "17.0.1",
+      "dependencies": [
+        "collection",
+        "flutter",
+        "flutter_web_plugins",
+        "logging",
+        "meta"
       ]
     },
     {
@@ -1302,6 +1315,13 @@
       ]
     },
     {
+      "name": "flutter_web_plugins",
+      "version": "0.0.0",
+      "dependencies": [
+        "flutter"
+      ]
+    },
+    {
       "name": "firebase_core_web",
       "version": "3.4.0",
       "dependencies": [
@@ -1448,13 +1468,6 @@
       "version": "2.1.8",
       "dependencies": [
         "meta"
-      ]
-    },
-    {
-      "name": "flutter_web_plugins",
-      "version": "0.0.0",
-      "dependencies": [
-        "flutter"
       ]
     },
     {

@@ -87,6 +87,12 @@
       <excludeFolder url="file://$MODULE_DIR$/packages/features/taskmanager_task_board/lib/src/data/.dart_tool" />
       <excludeFolder url="file://$MODULE_DIR$/packages/features/taskmanager_task_board/lib/src/data/.pub" />
       <excludeFolder url="file://$MODULE_DIR$/packages/features/taskmanager_task_board/lib/src/data/build" />
+      <excludeFolder url="file://$MODULE_DIR$/apps/taskmanager/linux/flutter/ephemeral/.plugin_symlinks/connectivity_plus/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/apps/taskmanager/linux/flutter/ephemeral/.plugin_symlinks/connectivity_plus/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/apps/taskmanager/linux/flutter/ephemeral/.plugin_symlinks/connectivity_plus/build" />
+      <excludeFolder url="file://$MODULE_DIR$/apps/taskmanager/linux/flutter/ephemeral/.plugin_symlinks/connectivity_plus/example/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/apps/taskmanager/linux/flutter/ephemeral/.plugin_symlinks/connectivity_plus/example/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/apps/taskmanager/linux/flutter/ephemeral/.plugin_symlinks/connectivity_plus/example/build" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

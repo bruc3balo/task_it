@@ -8,7 +8,6 @@ import 'package:platform_internet_checker_connectivity/platform_connectivity.dar
 import 'package:taskmanager_task_board/taskmanager_task_board.dart';
 import 'di.config.dart'; // Generated file
 
-final getIt = GetIt.instance;
 
 @InjectableInit(
   externalPackageModulesBefore: [
@@ -20,4 +19,4 @@ final getIt = GetIt.instance;
     ExternalModule(PlatformInternetCheckerConnectivityPackageModule), // From platform
   ],
 )
-Future<void> configureDependencies() async => await getIt.init();
+Future<void> configureDependencies() async => await GetIt.I.init();
