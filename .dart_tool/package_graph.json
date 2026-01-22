@@ -40,6 +40,10 @@
         "flutter",
         "get_it",
         "injectable",
+        "platform_firebase_authentication",
+        "platform_firestore_data_storage",
+        "platform_hive_data_storage",
+        "platform_internet_checker_connectivity",
         "taskmanager_task_board"
       ],
       "devDependencies": [
@@ -113,6 +117,7 @@
         "injectable"
       ],
       "devDependencies": [
+        "injectable_generator",
         "lints",
         "test"
       ]
@@ -129,7 +134,8 @@
       ],
       "devDependencies": [
         "flutter_lints",
-        "flutter_test"
+        "flutter_test",
+        "injectable_generator"
       ]
     },
     {
@@ -141,6 +147,7 @@
         "injectable"
       ],
       "devDependencies": [
+        "injectable_generator",
         "lints",
         "test"
       ]
@@ -157,6 +164,7 @@
       ],
       "devDependencies": [
         "build_runner",
+        "injectable_generator",
         "lints",
         "test"
       ]

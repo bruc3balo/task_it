@@ -17,6 +17,18 @@ dependencies:
   taskmanager_task_board:
     path: ../../packages/features/taskmanager_task_board
 
+  platform_firebase_authentication:
+    path: ../../packages/platform/platform_firebase_authentication
+
+  platform_firestore_data_storage:
+    path: ../../packages/platform/platform_firestore_data_storage
+
+  platform_hive_data_storage:
+    path: ../../packages/platform/platform_hive_data_storage
+
+  platform_internet_checker_connectivity:
+    path: ../../packages/platform/platform_internet_checker_connectivity
+
   get_it:
   injectable:
   firebase_core:

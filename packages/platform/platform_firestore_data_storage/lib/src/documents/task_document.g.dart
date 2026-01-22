@@ -11,7 +11,7 @@ TaskDocument _$TaskDocumentFromJson(Map<String, dynamic> json) => TaskDocument(
   title: json['title'] as String,
   description: json['description'] as String,
   createdAt: json['created_at'] as String,
-  dueAt: json['due_at'] as String,
+  dueAt: json['due_at'] as String?,
   status: json['status'] as String,
   managerId: json['manager_id'] as String,
   assigneeUserId: json['assignee_user_id'] as String?,
