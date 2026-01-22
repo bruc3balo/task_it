@@ -1,7 +1,8 @@
-name: taskmnager_taskboard_presentation
+name: taskmanager_taskboard_presentation
 description: "Taskmanager presentation layer"
 version: 0.0.1
 resolution: workspace
+publish_to: none
 
 environment:
   sdk: ^3.10.7

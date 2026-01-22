@@ -13,8 +13,18 @@ dependencies:
     path: ../../base
   core:
     path: ../../core
+  taskmanager_task_board_data:
+    path: lib/src/data
+
+  taskmanger_taskboard_domain:
+    path: lib/src/domain
+
+  taskmanager_taskboard_presentation:
+    path: lib/src/presentation
+
   injectable:
 
 dev_dependencies:
   lints: ^6.0.0
   test: ^1.25.6
+  injectable_generator:

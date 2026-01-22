@@ -9,6 +9,12 @@ environment:
 
 # Add regular dependencies here.
 dependencies:
+
+  injectable: ^2.3.0
+
+  auth_data:
+    path: lib/src/data
+
   auth_domain:
     path: lib/src/domain
 
@@ -22,3 +28,4 @@ dev_dependencies:
   build_runner: ^2.4.6
   json_serializable: ^6.7.1
   freezed: ^2.4.1
+  injectable_generator: ^2.6.1

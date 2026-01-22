@@ -11,7 +11,7 @@ Future<void> main() async {
     options: DefaultFirebaseOptions.currentPlatform,
   );
 
-  configureDependencies();
+  await configureDependencies();
 
   runApp(const TaskManagerApplication());
 }

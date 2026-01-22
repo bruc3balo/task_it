@@ -12,6 +12,6 @@ scripts:
     run: melos bootstrap
     description: Link all packages together.
 
-  build:runner:
+  build_runner:
     run: melos exec --depends-on="build_runner" -- "dart run build_runner build --delete-conflicting-outputs"
     description: Run code generation (such as Freezed/Json) in all packages.

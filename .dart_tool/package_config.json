@@ -848,7 +848,7 @@
       "languageVersion": "3.10"
     },
     {
-      "name": "taskmnager_taskboard_presentation",
+      "name": "taskmanager_taskboard_presentation",
       "rootUri": "../packages/features/taskmanager_task_board/lib/src/presentation",
       "packageUri": "lib/",
       "languageVersion": "3.10"
