@@ -17,10 +17,7 @@ import 'package:flutter/foundation.dart'
 class DefaultFirebaseOptions {
   static FirebaseOptions get currentPlatform {
     if (kIsWeb) {
-      throw UnsupportedError(
-        'DefaultFirebaseOptions have not been configured for web - '
-        'you can reconfigure this by running the FlutterFire CLI again.',
-      );
+      return web;
     }
     switch (defaultTargetPlatform) {
       case TargetPlatform.android:
@@ -59,4 +56,15 @@ class DefaultFirebaseOptions {
     projectId: 'taskit-tastmanager',
     storageBucket: 'taskit-tastmanager.firebasestorage.app',
   );
+
+  static const FirebaseOptions web = FirebaseOptions(
+    apiKey: 'AIzaSyAU9iH9OZj4F3NOSFf8Gft5HHKt1ypiD_M',
+    appId: '1:469180424863:web:8e9d6cb89403ce7e57b8aa',
+    messagingSenderId: '469180424863',
+    projectId: 'taskit-tastmanager',
+    authDomain: 'taskit-tastmanager.firebaseapp.com',
+    storageBucket: 'taskit-tastmanager.firebasestorage.app',
+    measurementId: 'G-V4NNB3RDJ6',
+  );
+
 }

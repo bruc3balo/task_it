@@ -1,7 +1,18 @@
 name: task_it_workspace
 description: The monorepo root for Task It applications.
+repository: https://github.com/bruc3balo/task_it.git
 environment:
   sdk: ^3.10.7
+
+dev_dependencies:
+  melos: ^7.3.0
+
+melos:
+
+  scripts:
+    build_runner:
+      run: melos exec --depends-on="build_runner" -- "dart run build_runner build --delete-conflicting-outputs"
+      description: Run code generation (such as Freezed/Json) in all packages.
 
 workspace:
 #  - apps/taskdoer
