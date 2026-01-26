@@ -2,7 +2,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_it/get_it.dart';
-import 'package:taskmanager/presentation/view_models/auth/auth_bloc.dart';
+import 'package:auth_presentation/features/auth/auth_bloc.dart';
 import 'package:taskmanager/routes/app_routes.dart';
 
 import 'firebase_options.dart';
@@ -59,4 +59,3 @@ class _TaskManagerApplicationState extends State<TaskManagerApplication> {
   }
 
 }
-

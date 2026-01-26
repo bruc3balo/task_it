@@ -1,4 +1,6 @@
-import 'package:auth/auth.dart';
+import 'package:auth_data/auth_data.dart';
+import 'package:auth_domain/auth_domain.module.dart';
+import 'package:auth_presentation/auth_presentation.module.dart';
 import 'package:get_it/get_it.dart';
 import 'package:injectable/injectable.dart';
 import 'package:platform_firebase_authentication/platform_firebase_authentication.dart';
@@ -11,7 +13,12 @@ import 'di.config.dart'; // Generated file
 
 @InjectableInit(
   externalPackageModulesBefore: [
-    ExternalModule(AuthPackageModule), // From features
+    //Auth
+    ExternalModule(AuthDomainPackageModule),
+    ExternalModule(AuthDataPackageModule),
+    ExternalModule(AuthPresentationPackageModule),
+
+    //Task Manager
     ExternalModule(TaskmanagerTaskBoardPackageModule), // From features
     ExternalModule(PlatformFirebaseAuthenticationPackageModule), // From platform
     ExternalModule(PlatformFirestoreDataStoragePackageModule), // From platform

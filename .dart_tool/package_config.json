@@ -320,12 +320,6 @@
       "languageVersion": "3.10"
     },
     {
-      "name": "freezed",
-      "rootUri": "file:///home/qwrty/.pub-cache/hosted/pub.dev/freezed-2.5.8",
-      "packageUri": "lib/",
-      "languageVersion": "3.0"
-    },
-    {
       "name": "freezed_annotation",
       "rootUri": "file:///home/qwrty/.pub-cache/hosted/pub.dev/freezed_annotation-2.4.4",
       "packageUri": "lib/",
@@ -860,26 +854,20 @@
       "languageVersion": "3.10"
     },
     {
-      "name": "auth",
-      "rootUri": "../packages/features/auth",
-      "packageUri": "lib/",
-      "languageVersion": "3.10"
-    },
-    {
       "name": "auth_data",
-      "rootUri": "../packages/features/auth/lib/src/data",
+      "rootUri": "../packages/features/auth/auth_data",
       "packageUri": "lib/",
       "languageVersion": "3.10"
     },
     {
       "name": "auth_domain",
-      "rootUri": "../packages/features/auth/lib/src/domain",
+      "rootUri": "../packages/features/auth/auth_domain",
       "packageUri": "lib/",
       "languageVersion": "3.10"
     },
     {
       "name": "auth_presentation",
-      "rootUri": "../packages/features/auth/lib/src/presentation",
+      "rootUri": "../packages/features/auth/auth_presentation",
       "packageUri": "lib/",
       "languageVersion": "3.10"
     },

@@ -1,8 +1,8 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:auth_presentation/presentation.dart'; // Ensure AuthBloc is exported here
-import 'package:taskmanager/presentation/view_models/auth/auth_bloc.dart'; // Import your Home Screen
+import 'package:auth_presentation/features/auth/auth_bloc.dart'; // Import your Home Screen
+import 'package:auth_presentation/auth_presentation.dart';
 
 class AppRoutes {
   static const splash = '/';

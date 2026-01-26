@@ -1,7 +1,6 @@
 {
   "roots": [
     "app_log",
-    "auth",
     "auth_data",
     "auth_domain",
     "auth_presentation",
@@ -37,7 +36,9 @@
       "name": "taskmanager",
       "version": "1.0.0+1",
       "dependencies": [
-        "auth",
+        "auth_data",
+        "auth_domain",
+        "auth_presentation",
         "firebase_core",
         "flutter",
         "flutter_bloc",
@@ -174,24 +175,6 @@
       ]
     },
     {
-      "name": "auth",
-      "version": "1.0.0",
-      "dependencies": [
-        "auth_data",
-        "auth_domain",
-        "auth_presentation",
-        "injectable"
-      ],
-      "devDependencies": [
-        "build_runner",
-        "freezed",
-        "injectable_generator",
-        "json_serializable",
-        "lints",
-        "test"
-      ]
-    },
-    {
       "name": "auth_data",
       "version": "1.0.0",
       "dependencies": [
@@ -200,6 +183,8 @@
         "injectable"
       ],
       "devDependencies": [
+        "build_runner",
+        "injectable_generator",
         "lints",
         "test"
       ]
@@ -215,6 +200,8 @@
         "json_annotation"
       ],
       "devDependencies": [
+        "build_runner",
+        "injectable_generator",
         "lints",
         "test"
       ]
@@ -232,8 +219,10 @@
         "ui_kit"
       ],
       "devDependencies": [
+        "build_runner",
         "flutter_lints",
-        "flutter_test"
+        "flutter_test",
+        "injectable_generator"
       ]
     },
     {
@@ -489,6 +478,48 @@
       ]
     },
     {
+      "name": "build_runner",
+      "version": "2.5.4",
+      "dependencies": [
+        "analyzer",
+        "args",
+        "async",
+        "build",
+        "build_config",
+        "build_daemon",
+        "build_resolvers",
+        "build_runner_core",
+        "code_builder",
+        "collection",
+        "crypto",
+        "dart_style",
+        "frontend_server_client",
+        "glob",
+        "graphs",
+        "http",
+        "http_multi_server",
+        "io",
+        "js",
+        "logging",
+        "meta",
+        "mime",
+        "package_config",
+        "path",
+        "pool",
+        "pub_semver",
+        "pubspec_parse",
+        "shelf",
+        "shelf_web_socket",
+        "stack_trace",
+        "stream_transform",
+        "timing",
+        "watcher",
+        "web",
+        "web_socket_channel",
+        "yaml"
+      ]
+    },
+    {
       "name": "get_it",
       "version": "9.2.0",
       "dependencies": [
@@ -531,21 +562,6 @@
       ]
     },
     {
-      "name": "freezed",
-      "version": "2.5.8",
-      "dependencies": [
-        "analyzer",
-        "build",
-        "build_config",
-        "collection",
-        "dart_style",
-        "freezed_annotation",
-        "json_annotation",
-        "meta",
-        "source_gen"
-      ]
-    },
-    {
       "name": "json_serializable",
       "version": "6.9.5",
       "dependencies": [
@@ -562,48 +578,6 @@
         "pubspec_parse",
         "source_gen",
         "source_helper"
-      ]
-    },
-    {
-      "name": "build_runner",
-      "version": "2.5.4",
-      "dependencies": [
-        "analyzer",
-        "args",
-        "async",
-        "build",
-        "build_config",
-        "build_daemon",
-        "build_resolvers",
-        "build_runner_core",
-        "code_builder",
-        "collection",
-        "crypto",
-        "dart_style",
-        "frontend_server_client",
-        "glob",
-        "graphs",
-        "http",
-        "http_multi_server",
-        "io",
-        "js",
-        "logging",
-        "meta",
-        "mime",
-        "package_config",
-        "path",
-        "pool",
-        "pub_semver",
-        "pubspec_parse",
-        "shelf",
-        "shelf_web_socket",
-        "stack_trace",
-        "stream_transform",
-        "timing",
-        "watcher",
-        "web",
-        "web_socket_channel",
-        "yaml"
       ]
     },
     {
@@ -1207,41 +1181,6 @@
       ]
     },
     {
-      "name": "provider",
-      "version": "6.1.5+1",
-      "dependencies": [
-        "collection",
-        "flutter",
-        "nested"
-      ]
-    },
-    {
-      "name": "loading_animation_widget",
-      "version": "1.3.0",
-      "dependencies": [
-        "flutter"
-      ]
-    },
-    {
-      "name": "build_config",
-      "version": "1.1.2",
-      "dependencies": [
-        "checked_yaml",
-        "json_annotation",
-        "path",
-        "pubspec_parse",
-        "yaml"
-      ]
-    },
-    {
-      "name": "source_helper",
-      "version": "1.3.7",
-      "dependencies": [
-        "analyzer",
-        "source_gen"
-      ]
-    },
-    {
       "name": "web",
       "version": "1.1.1",
       "dependencies": []
@@ -1348,6 +1287,41 @@
         "stream_transform",
         "watcher",
         "web_socket_channel"
+      ]
+    },
+    {
+      "name": "build_config",
+      "version": "1.1.2",
+      "dependencies": [
+        "checked_yaml",
+        "json_annotation",
+        "path",
+        "pubspec_parse",
+        "yaml"
+      ]
+    },
+    {
+      "name": "provider",
+      "version": "6.1.5+1",
+      "dependencies": [
+        "collection",
+        "flutter",
+        "nested"
+      ]
+    },
+    {
+      "name": "loading_animation_widget",
+      "version": "1.3.0",
+      "dependencies": [
+        "flutter"
+      ]
+    },
+    {
+      "name": "source_helper",
+      "version": "1.3.7",
+      "dependencies": [
+        "analyzer",
+        "source_gen"
       ]
     },
     {

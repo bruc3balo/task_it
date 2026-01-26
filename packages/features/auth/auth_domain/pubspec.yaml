@@ -1,0 +1,26 @@
+name: auth_domain
+description: Authentication domain layer
+version: 1.0.0
+publish_to: none
+resolution: workspace
+
+environment:
+  sdk: ^3.10.7
+
+# Add regular dependencies here.
+dependencies:
+  core:
+    path: ../../../../../core
+
+  base:
+    path: ../../../base
+
+  json_annotation: ^4.8.1
+  freezed_annotation: ^2.4.1
+  injectable:
+
+dev_dependencies:
+  lints: ^6.0.0
+  test: ^1.25.6
+  injectable_generator:
+  build_runner:

@@ -29,10 +29,9 @@ workspace:
   - packages/platform/platform_firestore_data_storage
 #  - packages/ui_kit
     # Features
-  - packages/features/auth
-  - packages/features/auth/lib/src/data
-  - packages/features/auth/lib/src/domain
-  - packages/features/auth/lib/src/presentation
+  - packages/features/auth/auth_data
+  - packages/features/auth/auth_domain
+  - packages/features/auth/auth_presentation
 #  - packages/features/reports
   - packages/features/taskdoer_task_board
   - packages/features/taskdoer_task_board/lib/src/data

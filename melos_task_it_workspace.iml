@@ -7,6 +7,24 @@
       <excludeFolder url="file://$MODULE_DIR$/.dart_tool" />
       <excludeFolder url="file://$MODULE_DIR$/.pub" />
       <excludeFolder url="file://$MODULE_DIR$/build" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/features/auth/auth_data/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/features/auth/auth_data/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/features/auth/auth_data/build" />
+      <excludeFolder url="file://$MODULE_DIR$/apps/taskdoer/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/apps/taskdoer/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/apps/taskdoer/build" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/features/auth/auth_domain/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/features/auth/auth_domain/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/features/auth/auth_domain/build" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/features/auth/auth_presentation/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/features/auth/auth_presentation/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/features/auth/auth_presentation/build" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/features/reports/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/features/reports/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/features/reports/build" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/ui_kit/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/ui_kit/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/ui_kit/build" />
     </content>
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="Dart SDK" level="project" />

@@ -11,8 +11,14 @@ dependencies:
   flutter:
     sdk: flutter
 
-  auth:
-    path: ../../packages/features/auth
+  auth_data:
+    path: ../../packages/features/auth/auth_data
+
+  auth_domain:
+    path: ../../packages/features/auth/auth_domain
+
+  auth_presentation:
+    path: ../../packages/features/auth/auth_presentation
 
   taskmanager_task_board:
     path: ../../packages/features/taskmanager_task_board
