@@ -1,0 +1,56 @@
+name: task_manager
+description: Task manager application
+publish_to: none
+resolution: workspace
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.10.7
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  auth_data:
+    path: ../../packages/features/auth/auth_data
+
+  auth_domain:
+    path: ../../packages/features/auth/auth_domain
+
+  auth_presentation:
+    path: ../../packages/features/auth/auth_presentation
+
+  task_manager_task_board_data:
+    path: ../../packages/features/task_manager_task_board/task_manager_task_board_data
+
+  task_manager_task_board_domain:
+    path: ../../packages/features/task_manager_task_board/task_manager_task_board_domain
+
+  task_manager_task_board_presentation:
+    path: ../../packages/features/task_manager_task_board/task_manager_task_board_presentation
+
+  platform_firebase_authentication:
+    path: ../../packages/platform/platform_firebase_authentication
+
+  platform_firestore_data_storage:
+    path: ../../packages/platform/platform_firestore_data_storage
+
+  platform_hive_data_storage:
+    path: ../../packages/platform/platform_hive_data_storage
+
+  platform_internet_checker_connectivity:
+    path: ../../packages/platform/platform_internet_checker_connectivity
+
+  get_it:
+  injectable:
+  firebase_core:
+  go_router:
+  flutter_bloc:
+
+dev_dependencies:
+  build_runner:
+  injectable_generator:
+
+
+flutter:
+  uses-material-design: true

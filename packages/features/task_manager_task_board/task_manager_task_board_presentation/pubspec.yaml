@@ -1,0 +1,38 @@
+name: task_manager_task_board_presentation
+description: "task_manager presentation layer"
+version: 0.0.1
+resolution: workspace
+publish_to: none
+
+environment:
+  sdk: ^3.10.7
+  flutter: ">=1.17.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  injectable:
+  core:
+    path: ../../../core
+
+  task_manager_task_board_domain:
+    path: ../task_manager_task_board_domain
+
+  bloc:
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+  injectable_generator:
+  build_runner:
+
+
+
+# For information on the generic Dart part of this file, see the
+# following page: https://dart.dev/tools/pub/pubspec
+
+# The following section is specific to Flutter packages.
+flutter:
+

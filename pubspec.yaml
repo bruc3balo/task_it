@@ -16,7 +16,7 @@ melos:
 
 workspace:
 #  - apps/taskdoer
-  - apps/taskmanager
+  - apps/task_manager
   - packages/base # If you still have this, otherwise remove
   - packages/core
   - packages/core/lib/src/data_storage
@@ -29,6 +29,7 @@ workspace:
   - packages/platform/platform_firestore_data_storage
 #  - packages/ui_kit
     # Features
+    # Auth
   - packages/features/auth/auth_data
   - packages/features/auth/auth_domain
   - packages/features/auth/auth_presentation
@@ -37,7 +38,7 @@ workspace:
   - packages/features/taskdoer_task_board/lib/src/data
   - packages/features/taskdoer_task_board/lib/src/domain
   - packages/features/taskdoer_task_board/lib/src/presentation
-  - packages/features/taskmanager_task_board
-  - packages/features/taskmanager_task_board/lib/src/data
-  - packages/features/taskmanager_task_board/lib/src/domain
-  - packages/features/taskmanager_task_board/lib/src/presentation
+   # task_manager_task_board
+  - packages/features/task_manager_task_board/task_manager_task_board_data
+  - packages/features/task_manager_task_board/task_manager_task_board_domain
+  - packages/features/task_manager_task_board/task_manager_task_board_presentation

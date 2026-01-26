@@ -14,7 +14,7 @@ class TaskEntity with _$TaskEntity {
     required DateTime createdAt,
     required DateTime? dueAt,
     @Default(TaskStatusEntity.pending) TaskStatusEntity status,
-    required TaskManagerIdValue managerId, // The Manager
+    required task_managerIdValue managerId, // The Manager
     AssigneeIdValue? assigneeUserId, // The Doer (Nullable: might not be assigned yet)
   }) = _TaskEntity;
 }

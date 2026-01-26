@@ -1,7 +1,7 @@
 import 'package:bloc/bloc.dart';
+import 'package:core/core.dart';
 import 'package:injectable/injectable.dart';
 import 'package:meta/meta.dart';
-import 'package:taskmanager_task_board/taskmanager_task_board.dart';
 
 part 'auth_event.dart';
 

@@ -1,9 +1,9 @@
 import 'package:base/base.dart';
 
-class TaskManagerIdValue {
+class task_managerIdValue {
 
   //This represents the user id
   final String value;
 
-  TaskManagerIdValue(this.value) : assert(userIdValidationError(value) == null);
+  task_managerIdValue(this.value) : assert(userIdValidationError(value) == null);
 }

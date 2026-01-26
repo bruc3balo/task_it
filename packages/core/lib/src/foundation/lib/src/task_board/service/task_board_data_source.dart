@@ -6,5 +6,5 @@ abstract class TaskBoardDataSource {
 
   Future<TaskResult<List<TaskEntity>>> getTasksAssignedToUser<Page>(AssigneeIdValue assigneeId, BasePage<Page> page);
 
-  Future<TaskResult<List<TaskEntity>>> getTasksCreatedByUser<Page>(TaskManagerIdValue taskMangerId, BasePage<Page> page);
+  Future<TaskResult<List<TaskEntity>>> getTasksCreatedByUser<Page>(task_managerIdValue taskMangerId, BasePage<Page> page);
 }

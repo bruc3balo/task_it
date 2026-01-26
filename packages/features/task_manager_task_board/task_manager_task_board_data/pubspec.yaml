@@ -1,0 +1,21 @@
+name: task_manager_task_board_data
+description: A starting point for Dart libraries or applications.
+version: 1.0.0
+resolution: workspace
+publish_to: none
+
+environment:
+  sdk: ^3.10.7
+
+# Add regular dependencies here.
+dependencies:
+  uuid:
+  injectable:
+  task_manager_task_board_domain:
+    path: ../task_manager_task_board_domain
+
+dev_dependencies:
+  lints: ^6.0.0
+  test: ^1.25.6
+  injectable_generator:
+  build_runner:

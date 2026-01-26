@@ -1,8 +1,9 @@
-/// Support for doing something awesome.
-///
-/// More dartdocs go here.
 library;
 
-export 'src/platform_firestore_data_storage_base.dart';
+import 'package:injectable/injectable.dart';
 
-// TODO: Export any libraries intended for clients of this package.
+export 'src/platform_firestore_data_storage_base.dart';
+export 'platform_firestore_data_storage.module.dart';
+
+@InjectableInit.microPackage()
+void initPlatformFirestoreDataStorage() {}

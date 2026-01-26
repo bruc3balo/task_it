@@ -14,8 +14,8 @@ import 'package:auth_presentation/features/forgot_password/forgot_password_bloc.
     as _i1063;
 import 'package:auth_presentation/features/sign_in/sign_in_bloc.dart' as _i726;
 import 'package:auth_presentation/features/sign_up/sign_up_bloc.dart' as _i450;
+import 'package:core/core.dart' as _i494;
 import 'package:injectable/injectable.dart' as _i526;
-import 'package:taskmanager_task_board/taskmanager_task_board.dart' as _i243;
 
 class AuthPresentationPackageModule extends _i526.MicroPackageModule {
 // initializes the registration of main-scope dependencies inside of GetIt
@@ -23,10 +23,10 @@ class AuthPresentationPackageModule extends _i526.MicroPackageModule {
   _i687.FutureOr<void> init(_i526.GetItHelper gh) {
     gh.factory<_i726.SignInBloc>(
         () => _i726.SignInBloc(gh<_i470.SignInUseCase>()));
-    gh.factory<_i498.AuthBloc>(
-        () => _i498.AuthBloc(gh<_i243.AppAuthenticatorService>()));
     gh.factory<_i450.SignUpBloc>(
         () => _i450.SignUpBloc(gh<_i470.SignUpUseCase>()));
+    gh.factory<_i498.AuthBloc>(
+        () => _i498.AuthBloc(gh<_i494.AppAuthenticatorService>()));
     gh.factory<_i1040.CreateUserBloc>(() => _i1040.CreateUserBloc(
           gh<_i470.CreateUserUseCase>(),
           gh<_i470.GetCurrentUserUseCase>(),
