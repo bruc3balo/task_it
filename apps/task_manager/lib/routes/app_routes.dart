@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:auth_presentation/features/auth/auth_bloc.dart'; // Import your Home Screen
 import 'package:auth_presentation/auth_presentation.dart';
+import 'package:task_manager/presentation/features/splash/splash_screen.dart';
 
 class AppRoutes {
   static const splash = '/';
@@ -31,9 +32,7 @@ class AppRouter {
     redirect: (context, state) {
       final authState = authBloc.state;
       final isLoggingIn =
-          state.matchedLocation == AppRoutes.signIn ||
-              state.matchedLocation == AppRoutes.signUp ||
-              state.matchedLocation == AppRoutes.forgotPassword;
+          state.matchedLocation == AppRoutes.signIn || state.matchedLocation == AppRoutes.signUp || state.matchedLocation == AppRoutes.forgotPassword;
 
       // A. If Unauthenticated -> Force to Sign In
       if (authState is NotAuthenticatedAuthState) {
@@ -58,14 +57,31 @@ class AppRouter {
       // --- PUBLIC ROUTES ---
       GoRoute(
         path: AppRoutes.splash,
-        builder: (context, state) => const Scaffold(body: Center(child: CircularProgressIndicator())),
+        builder: (context, state) => SplashScreen(goToSignIn: () => context.replace(AppRoutes.signIn)),
       ),
-      GoRoute(path: AppRoutes.signIn, builder: (context, state) => const SignInScreen()),
-      GoRoute(path: AppRoutes.signUp, builder: (context, state) => const SignUpScreen()),
+      GoRoute(
+        path: AppRoutes.signIn,
+        builder: (context, state) => SignInScreen(
+          goToCreateAccountScreen: () => context.replace(AppRoutes.createUser),
+          goToHomePage: () => context.replace(AppRoutes.home),
+          goToSignUpScreen: () => context.replace(AppRoutes.signUp),
+          goToForgotPassword: () => context.go(AppRoutes.forgotPassword),
+        ),
+      ),
+      GoRoute(
+        path: AppRoutes.signUp,
+        builder: (context, state) => SignUpScreen(
+          goToSignInScreen: () => context.replace(AppRoutes.signIn),
+          goToCreateAccountScreen: () => context.replace(AppRoutes.createUser),
+        ),
+      ),
       GoRoute(path: AppRoutes.forgotPassword, builder: (context, state) => const ForgotPasswordScreen()),
 
       // --- ONBOARDING ---
-      GoRoute(path: AppRoutes.createUser, builder: (context, state) => const CreateUserScreen()),
+      GoRoute(
+        path: AppRoutes.createUser,
+        builder: (context, state) => CreateUserScreen(goToHomeScreen: () => context.replace(AppRoutes.home)),
+      ),
 
       // --- PRIVATE ROUTES ---
       GoRoute(path: AppRoutes.home, builder: (context, state) => const Placeholder()),
@@ -79,9 +95,7 @@ class GoRouterRefreshStream extends ChangeNotifier {
 
   GoRouterRefreshStream(Stream<dynamic> stream) {
     notifyListeners();
-    _subscription = stream.asBroadcastStream().listen(
-          (dynamic _) => notifyListeners(),
-    );
+    _subscription = stream.asBroadcastStream().listen((dynamic _) => notifyListeners());
   }
 
   @override
