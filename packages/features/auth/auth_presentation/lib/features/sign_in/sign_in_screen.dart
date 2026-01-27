@@ -10,14 +10,12 @@ export 'sign_in_bloc.dart';
 class SignInScreen extends StatefulWidget {
   const SignInScreen({
     required this.goToHomePage,
-    required this.goToCreateAccountScreen,
     required this.goToSignUpScreen,
     required this.goToForgotPassword,
     super.key,
   });
 
   final Function() goToForgotPassword;
-  final Function() goToCreateAccountScreen;
   final Function() goToSignUpScreen;
   final Function() goToHomePage;
 
@@ -44,12 +42,6 @@ class _SignInScreenState extends State<SignInScreen> {
                 widget.goToHomePage();
                 break;
               case ErrorSignInState():
-                if (state.failure.failureType == FailureType.accountIncomplete) {
-                  ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Complete account creation")));
-                  widget.goToCreateAccountScreen();
-                  return;
-                }
-
                 ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(state.failure.toString())));
                 break;
               default:
@@ -76,8 +68,6 @@ class _SignInScreenState extends State<SignInScreen> {
                       ),
                       TextFormField(
                         controller: passwordController,
-                        autovalidateMode: AutovalidateMode.onUserInteraction,
-                        validator: passwordValidationError,
                         decoration: const InputDecoration(labelText: 'Password'),
                         obscureText: true,
                       ),

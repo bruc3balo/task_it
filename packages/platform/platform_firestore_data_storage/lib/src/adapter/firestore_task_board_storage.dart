@@ -47,7 +47,7 @@ class FirestoreTaskBoardStorage extends TaskBoardDataSource {
   }
 
   @override
-  Future<TaskResult<List<TaskEntity>>> getTasksCreatedByUser<Page>(task_managerIdValue task_managerId, BasePage<Page> page) async {
+  Future<TaskResult<List<TaskEntity>>> getTasksCreatedByUser<Page>(TaskManagerIdValue task_managerId, BasePage<Page> page) async {
     try {
       Query<TaskDocument> query = _taskCollection
           .where('manager_id', isEqualTo: task_managerId.value)

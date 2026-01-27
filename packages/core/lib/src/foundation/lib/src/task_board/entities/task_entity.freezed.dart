@@ -23,7 +23,7 @@ mixin _$TaskEntity {
   DateTime get createdAt => throw _privateConstructorUsedError;
   DateTime? get dueAt => throw _privateConstructorUsedError;
   TaskStatusEntity get status => throw _privateConstructorUsedError;
-  task_managerIdValue get managerId =>
+  TaskManagerIdValue get managerId =>
       throw _privateConstructorUsedError; // The Manager
   AssigneeIdValue? get assigneeUserId => throw _privateConstructorUsedError;
 
@@ -48,7 +48,7 @@ abstract class $TaskEntityCopyWith<$Res> {
     DateTime createdAt,
     DateTime? dueAt,
     TaskStatusEntity status,
-    task_managerIdValue managerId,
+    TaskManagerIdValue managerId,
     AssigneeIdValue? assigneeUserId,
   });
 }
@@ -106,7 +106,7 @@ class _$TaskEntityCopyWithImpl<$Res, $Val extends TaskEntity>
             managerId: null == managerId
                 ? _value.managerId
                 : managerId // ignore: cast_nullable_to_non_nullable
-                      as task_managerIdValue,
+                      as TaskManagerIdValue,
             assigneeUserId: freezed == assigneeUserId
                 ? _value.assigneeUserId
                 : assigneeUserId // ignore: cast_nullable_to_non_nullable
@@ -133,7 +133,7 @@ abstract class _$$TaskEntityImplCopyWith<$Res>
     DateTime createdAt,
     DateTime? dueAt,
     TaskStatusEntity status,
-    task_managerIdValue managerId,
+    TaskManagerIdValue managerId,
     AssigneeIdValue? assigneeUserId,
   });
 }
@@ -190,7 +190,7 @@ class __$$TaskEntityImplCopyWithImpl<$Res>
         managerId: null == managerId
             ? _value.managerId
             : managerId // ignore: cast_nullable_to_non_nullable
-                  as task_managerIdValue,
+                  as TaskManagerIdValue,
         assigneeUserId: freezed == assigneeUserId
             ? _value.assigneeUserId
             : assigneeUserId // ignore: cast_nullable_to_non_nullable
@@ -228,7 +228,7 @@ class _$TaskEntityImpl implements _TaskEntity {
   @JsonKey()
   final TaskStatusEntity status;
   @override
-  final task_managerIdValue managerId;
+  final TaskManagerIdValue managerId;
   // The Manager
   @override
   final AssigneeIdValue? assigneeUserId;
@@ -287,7 +287,7 @@ abstract class _TaskEntity implements TaskEntity {
     required final DateTime createdAt,
     required final DateTime? dueAt,
     final TaskStatusEntity status,
-    required final task_managerIdValue managerId,
+    required final TaskManagerIdValue managerId,
     final AssigneeIdValue? assigneeUserId,
   }) = _$TaskEntityImpl;
 
@@ -304,7 +304,7 @@ abstract class _TaskEntity implements TaskEntity {
   @override
   TaskStatusEntity get status;
   @override
-  task_managerIdValue get managerId; // The Manager
+  TaskManagerIdValue get managerId; // The Manager
   @override
   AssigneeIdValue? get assigneeUserId;
 

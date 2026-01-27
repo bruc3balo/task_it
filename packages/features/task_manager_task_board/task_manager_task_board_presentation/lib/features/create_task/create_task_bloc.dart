@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:bloc/bloc.dart';
 import 'package:injectable/injectable.dart';
 import 'package:meta/meta.dart';
@@ -14,6 +16,7 @@ class CreateTaskBloc extends Bloc<CreateTaskEvent, CreateTaskState> {
 
   CreateTaskBloc(CreateANewTaskUseCase createANewTaskUseCase) : _createANewTaskUseCase = createANewTaskUseCase, super(InitialCreateTaskState()) {
     on<CreateANewTaskEvent>(_createTask);
+    on<ResetErrorEvent>(_resetError);
   }
 
   Future<void> _createTask(CreateANewTaskEvent event, Emitter<CreateTaskState> emit) async {
@@ -35,5 +38,10 @@ class CreateTaskBloc extends Bloc<CreateTaskEvent, CreateTaskState> {
     } catch (e, trace) {
       emit(ErrorCreateTaskState(AppFailure(trace: trace)));
     }
+  }
+
+  FutureOr<void> _resetError(ResetErrorEvent event, Emitter<CreateTaskState> emit) {
+    if(state is! ErrorCreateTaskState) return null;
+    emit(InitialCreateTaskState());
   }
 }

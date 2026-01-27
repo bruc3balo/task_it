@@ -26,11 +26,11 @@ class SignInBloc extends Bloc<SignInEvent, SignInState> {
         params: SignInForm(password: event.password, email: event.email),
       );
       switch (signInResult) {
-        case FailedResult<AppUserEntity>():
+        case FailedResult<AppUserIdValue>():
           emit(ErrorSignInState(failure: signInResult.failure));
           break;
-        case SuccessResult<AppUserEntity>():
-          emit(SuccessSignInState(user: signInResult.result));
+        case SuccessResult<AppUserIdValue>():
+          emit(SuccessSignInState(userId: signInResult.result));
           break;
       }
     } catch (e, trace) {

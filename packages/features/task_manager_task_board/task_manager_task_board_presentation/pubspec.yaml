@@ -19,6 +19,12 @@ dependencies:
   task_manager_task_board_domain:
     path: ../task_manager_task_board_domain
 
+  ui_kit:
+    path: ../../../ui_kit
+
+  flutter_bloc:
+  get_it:
+
   bloc:
 
 dev_dependencies:

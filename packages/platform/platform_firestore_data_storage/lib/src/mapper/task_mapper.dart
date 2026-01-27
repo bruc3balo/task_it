@@ -26,7 +26,7 @@ class TaskDocumentEntityMapper extends DocumentEntityMapper<TaskEntity, TaskDocu
       createdAt: DateTime.parse(document.createdAt),
       dueAt: document.dueAt != null ? DateTime.parse(document.dueAt!) : null,
       status: TaskStatusEntity.values.byName(document.status),
-      managerId: task_managerIdValue(document.managerId),
+      managerId: TaskManagerIdValue(document.managerId),
       assigneeUserId: document.assigneeUserId != null ? AssigneeIdValue(document.assigneeUserId!) : null,
     );
   }

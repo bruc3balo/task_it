@@ -23,7 +23,7 @@ class CreateANewTaskUseCase extends BaseUseCase<TaskEntity, TaskForm> {
         case SuccessResult<AuthUser>():
           return await _taskManagerRepository.createANewTask(
             CreateNewTaskForm(
-              createdBy: task_managerIdValue(currentUserResult.result.id.value),
+              createdBy: TaskManagerIdValue(currentUserResult.result.id.value),
               title: params.title,
               description: params.description,
               dueAt: params.dueAt,
@@ -31,6 +31,8 @@ class CreateANewTaskUseCase extends BaseUseCase<TaskEntity, TaskForm> {
           );
       }
     } catch (e, trace) {
+      print(e.toString());
+      print(trace);
       return FailedResult(AppFailure(trace: trace));
     }
   }

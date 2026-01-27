@@ -37,7 +37,6 @@ class AuthDomainPackageModule extends _i526.MicroPackageModule {
             authRepository: gh<_i470.AuthRepository>()));
     gh.lazySingleton<_i157.SignInUseCase>(() => _i157.SignInUseCase(
           authRepository: gh<_i470.AuthRepository>(),
-          appUserRepository: gh<_i470.AppUserRepository>(),
         ));
   }
 }

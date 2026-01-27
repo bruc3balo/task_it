@@ -4,6 +4,8 @@ import 'package:go_router/go_router.dart';
 import 'package:auth_presentation/features/auth/auth_bloc.dart'; // Import your Home Screen
 import 'package:auth_presentation/auth_presentation.dart';
 import 'package:task_manager/presentation/features/splash/splash_screen.dart';
+import 'package:task_manager_task_board_presentation/features/create_task/create_task_screen.dart';
+import 'package:task_manager_task_board_presentation/features/view_my_created_tasks/view_my_created_tasks_screen.dart';
 
 class AppRoutes {
   static const splash = '/';
@@ -11,6 +13,7 @@ class AppRoutes {
   static const signUp = '/sign-up';
   static const forgotPassword = '/forgot-password';
   static const createUser = '/create-user';
+  static const createTask = '/create-task';
   static const home = '/home';
 }
 
@@ -34,22 +37,18 @@ class AppRouter {
       final isLoggingIn =
           state.matchedLocation == AppRoutes.signIn || state.matchedLocation == AppRoutes.signUp || state.matchedLocation == AppRoutes.forgotPassword;
 
-      // A. If Unauthenticated -> Force to Sign In
-      if (authState is NotAuthenticatedAuthState) {
-        return isLoggingIn ? null : AppRoutes.signIn;
+      switch (authState) {
+        case InitialAuthState():
+          break;
+        case LoadingAuthState():
+          break;
+        case AuthenticatedAuthState():
+          if (isLoggingIn || state.matchedLocation == AppRoutes.splash) return AppRoutes.createUser;
+          break;
+        case NotAuthenticatedAuthState():
+          if (!isLoggingIn) return AppRoutes.signIn;
+          break;
       }
-
-      // B. If Authenticated but on a Login page -> Send to Home
-      if (authState is AuthenticatedAuthState) {
-        if (isLoggingIn || state.matchedLocation == AppRoutes.splash) {
-          // Optional: Check if user has a profile (Display Name)
-          // If not, send to CreateUserScreen
-          // if (authState.user.displayName == null) return AppRoutes.createUser;
-
-          return AppRoutes.home;
-        }
-      }
-
       return null; // No redirection needed
     },
 
@@ -62,7 +61,6 @@ class AppRouter {
       GoRoute(
         path: AppRoutes.signIn,
         builder: (context, state) => SignInScreen(
-          goToCreateAccountScreen: () => context.replace(AppRoutes.createUser),
           goToHomePage: () => context.replace(AppRoutes.home),
           goToSignUpScreen: () => context.replace(AppRoutes.signUp),
           goToForgotPassword: () => context.go(AppRoutes.forgotPassword),
@@ -84,7 +82,15 @@ class AppRouter {
       ),
 
       // --- PRIVATE ROUTES ---
-      GoRoute(path: AppRoutes.home, builder: (context, state) => const Placeholder()),
+      GoRoute(
+        path: AppRoutes.home,
+        builder: (context, state) => ViewMyCreatedTasksScreen(goToCreateNewTaskScreen: () => context.go(AppRoutes.createTask)),
+      ),
+
+      GoRoute(
+        path: AppRoutes.createTask,
+        builder: (context, state) => CreateTaskScreen(onComplete: () => context.pop()),
+      ),
     ],
   );
 }

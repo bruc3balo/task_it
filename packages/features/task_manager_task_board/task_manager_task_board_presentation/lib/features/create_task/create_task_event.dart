@@ -3,6 +3,8 @@ part of 'create_task_bloc.dart';
 @immutable
 sealed class CreateTaskEvent {}
 
+final class ResetErrorEvent extends CreateTaskEvent {}
+
 final class CreateANewTaskEvent extends CreateTaskEvent {
   final TaskTitleValue title;
   final TaskDescriptionValue description;

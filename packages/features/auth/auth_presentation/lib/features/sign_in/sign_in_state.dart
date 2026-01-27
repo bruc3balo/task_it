@@ -8,9 +8,9 @@ final class InitialSignInState extends SignInState {}
 final class LoadingSignInState extends SignInState {}
 
 final class SuccessSignInState extends SignInState {
-  final AppUserEntity user;
+  final AppUserIdValue userId;
 
-  SuccessSignInState({required this.user});
+  SuccessSignInState({required this.userId});
 }
 
 final class ErrorSignInState extends SignInState {

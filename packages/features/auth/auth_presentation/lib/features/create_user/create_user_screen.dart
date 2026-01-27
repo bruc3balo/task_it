@@ -40,6 +40,7 @@ class _CreateUserScreenState extends State<CreateUserScreen> {
                 break;
               case ErrorCreateUserState():
                 ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(state.failure.message)));
+                debugPrint(state.failure.message);
                 break;
               default:
                 break;

@@ -3,6 +3,8 @@ import 'package:core/core.dart';
 
 /// Helper to map Firebase codes to your FailureType enum
 FailedResult<T> handleFirestoreError<T>(FirebaseException e, StackTrace trace) {
+  print(e.toString());
+  print(trace);
   FailureType type;
 
   switch (e.code) {

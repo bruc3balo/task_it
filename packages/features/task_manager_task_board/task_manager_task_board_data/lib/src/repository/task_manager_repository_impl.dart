@@ -26,7 +26,7 @@ class TaskManagerRepositoryImpl extends TaskManagerRepository {
   }
 
   @override
-  Future<TaskResult<List<TaskEntity>>> getTasksCreatedByUser<Page>(task_managerIdValue id, BasePage<Page> page) async {
+  Future<TaskResult<List<TaskEntity>>> getTasksCreatedByUser<Page>(TaskManagerIdValue id, BasePage<Page> page) async {
     try {
       return await _dataSource.getTasksCreatedByUser(id, page);
     } catch (e, trace) {

@@ -16,6 +16,7 @@ class ViewMyCreatedTasksBloc extends Bloc<ViewMyCreatedTasksEvent, ViewMyCreated
   final SplayTreeSet<TaskEntity> _taskSet = SplayTreeSet((a, b) => a.createdAt.compareTo(b.createdAt));
   
   int get pageSize => 10;
+  UnmodifiableListView<TaskEntity> get taskList => UnmodifiableListView(_taskSet);
 
   ViewMyCreatedTasksBloc(GetTasksCreatedByUserUseCase getTasksCreatedByUserUseCase)
     : _getTasksCreatedByUserUseCase = getTasksCreatedByUserUseCase,
@@ -25,6 +26,8 @@ class ViewMyCreatedTasksBloc extends Bloc<ViewMyCreatedTasksEvent, ViewMyCreated
 
   Future<void> _loadMoreTasks(LoadMoreOfMyTasksEvent event, Emitter<ViewMyCreatedTasksState> emit) async {
     if (state is! LoadedViewMyCreatedTasksState) return;
+
+    print("Loading tasks");
 
     List<TaskEntity>? lastFetchedResults = (state as LoadedViewMyCreatedTasksState).lastFetchedResults;
     try {

@@ -20,7 +20,7 @@ class GetTasksCreatedByUserUseCase<Page> extends BaseUseCase<List<TaskEntity>, G
         case FailedResult<AuthUser>():
           return FailedResult.fromFailure(currentUserResult);
         case SuccessResult<AuthUser>():
-          return await _taskManagerRepository.getTasksCreatedByUser(task_managerIdValue(currentUserResult.result.id.value), params);
+          return await _taskManagerRepository.getTasksCreatedByUser(TaskManagerIdValue(currentUserResult.result.id.value), params);
       }
     } catch (e, trace) {
       return FailedResult(AppFailure(trace: trace));
