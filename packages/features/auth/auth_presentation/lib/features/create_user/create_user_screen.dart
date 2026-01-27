@@ -8,7 +8,9 @@ import 'create_user_bloc.dart';
 export 'create_user_bloc.dart';
 
 class CreateUserScreen extends StatefulWidget {
-  const CreateUserScreen({super.key});
+  const CreateUserScreen({required this.goToHomeScreen, super.key});
+
+  final Function() goToHomeScreen;
 
   @override
   State<CreateUserScreen> createState() => _CreateUserScreenState();
@@ -30,11 +32,11 @@ class _CreateUserScreenState extends State<CreateUserScreen> {
             switch (state) {
               case SuccessCreateUserState():
                 ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Profile Created!')));
-                // TODO: Navigate to Home Dashboard
+                widget.goToHomeScreen();
                 break;
               case AlreadyCreatedUserState():
-              // The user already has a profile, skip this screen
-              // TODO: Navigate to Home Dashboard
+                // The user already has a profile, skip this screen
+                widget.goToHomeScreen();
                 break;
               case ErrorCreateUserState():
                 ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(state.failure.message)));
@@ -46,13 +48,13 @@ class _CreateUserScreenState extends State<CreateUserScreen> {
           builder: (context, state) {
             // 2. Decide what to show based on state
             return switch (state) {
-            // While checking or submitting, show loader
+              // While checking or submitting, show loader
               InitialCreateUserState() || LoadingCreateUserState() => const InfinityLoader(),
 
-            // If we are ready, or if there was an error (allow retry), show the form
+              // If we are ready, or if there was an error (allow retry), show the form
               ReadyToCreateUserState() || ErrorCreateUserState() => _buildForm(context),
 
-            // If success/already created, show nothing (navigation happens in listener)
+              // If success/already created, show nothing (navigation happens in listener)
               SuccessCreateUserState() || AlreadyCreatedUserState() => const SizedBox.shrink(),
             };
           },
@@ -68,21 +70,14 @@ class _CreateUserScreenState extends State<CreateUserScreen> {
         key: _formKey,
         child: Column(
           children: [
-            const Text(
-              "Welcome! Let's set up your profile.",
-              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-            ),
+            const Text("Welcome! Let's set up your profile.", style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
             const SizedBox(height: 20),
 
             TextFormField(
               controller: displayNameController,
               validator: displayNameValidationError, // Using the validator from Base/Utils
               autovalidateMode: AutovalidateMode.onUserInteraction,
-              decoration: const InputDecoration(
-                labelText: 'Display Name',
-                hintText: 'e.g. Task Master',
-                border: OutlineInputBorder(),
-              ),
+              decoration: const InputDecoration(labelText: 'Display Name', hintText: 'e.g. Task Master', border: OutlineInputBorder()),
             ),
             const SizedBox(height: 20),
 
@@ -91,11 +86,7 @@ class _CreateUserScreenState extends State<CreateUserScreen> {
               child: ElevatedButton(
                 onPressed: () {
                   if (_formKey.currentState?.validate() == true) {
-                    context.read<CreateUserBloc>().add(
-                      InitiateCreateUserEvent(
-                        displayNameValue: DisplayNameValue(displayNameController.text),
-                      ),
-                    );
+                    context.read<CreateUserBloc>().add(InitiateCreateUserEvent(displayNameValue: DisplayNameValue(displayNameController.text)));
                   }
                 },
                 child: const Text('Create Account'),

@@ -8,7 +8,18 @@ import 'sign_in_bloc.dart';
 export 'sign_in_bloc.dart';
 
 class SignInScreen extends StatefulWidget {
-  const SignInScreen({super.key});
+  const SignInScreen({
+    required this.goToHomePage,
+    required this.goToCreateAccountScreen,
+    required this.goToSignUpScreen,
+    required this.goToForgotPassword,
+    super.key,
+  });
+
+  final Function() goToForgotPassword;
+  final Function() goToCreateAccountScreen;
+  final Function() goToSignUpScreen;
+  final Function() goToHomePage;
 
   @override
   State<SignInScreen> createState() => _SignInScreenState();
@@ -30,9 +41,15 @@ class _SignInScreenState extends State<SignInScreen> {
             switch (state) {
               case SuccessSignInState():
                 ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Sign In Successful!')));
-                // TODO: Navigate to Home Dashboard
+                widget.goToHomePage();
                 break;
               case ErrorSignInState():
+                if (state.failure.failureType == FailureType.accountIncomplete) {
+                  ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Complete account creation")));
+                  widget.goToCreateAccountScreen();
+                  return;
+                }
+
                 ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(state.failure.toString())));
                 break;
               default:
@@ -66,6 +83,13 @@ class _SignInScreenState extends State<SignInScreen> {
                       ),
                       const SizedBox(height: 10),
 
+                      Align(
+                        alignment: Alignment.centerRight,
+                        child: TextButton(onPressed: widget.goToForgotPassword, child: const Text("Forgot password?")),
+                      ),
+
+                      const SizedBox(height: 10),
+
                       // ACTION BUTTON
                       ElevatedButton(
                         onPressed: () {
@@ -81,13 +105,10 @@ class _SignInScreenState extends State<SignInScreen> {
                         child: const Text('Sign In'),
                       ),
 
+                      Text("- OR -"),
+
                       // NAVIGATION LINK
-                      TextButton(
-                        onPressed: () {
-                          // TODO: Navigate to SignUpScreen
-                        },
-                        child: const Text("Don't have an account? Sign Up"),
-                      ),
+                      TextButton(onPressed: widget.goToSignUpScreen, child: const Text("Don't have an account? Sign Up")),
                     ],
                   ),
                 );

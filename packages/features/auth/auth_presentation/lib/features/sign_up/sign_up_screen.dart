@@ -1,4 +1,3 @@
-
 import 'package:core/core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -9,7 +8,10 @@ import 'sign_up_bloc.dart';
 export 'sign_up_bloc.dart';
 
 class SignUpScreen extends StatefulWidget {
-  const SignUpScreen({super.key});
+  const SignUpScreen({required this.goToCreateAccountScreen, required this.goToSignInScreen, super.key});
+
+  final Function() goToSignInScreen;
+  final Function() goToCreateAccountScreen;
 
   @override
   State<SignUpScreen> createState() => _SignUpScreenState();
@@ -31,7 +33,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
             switch (state) {
               case SuccessSignUpState():
                 ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Sign Up Successful!')));
-                //TODO: Navigate to create account
+                widget.goToCreateAccountScreen();
                 break;
               case ErrorSignUpState():
                 ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(state.failure.toString())));
@@ -48,12 +50,14 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   child: Column(
                     spacing: 10,
                     children: [
+
                       TextFormField(
                         controller: emailController,
                         validator: emailValidationError,
                         autovalidateMode: AutovalidateMode.onUserInteraction,
                         decoration: const InputDecoration(labelText: 'Email'),
                       ),
+
                       TextFormField(
                         controller: passwordController,
                         autovalidateMode: AutovalidateMode.onUserInteraction,
@@ -61,7 +65,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         decoration: const InputDecoration(labelText: 'Password'),
                         obscureText: true,
                       ),
+
                       const SizedBox(height: 10),
+
                       ElevatedButton(
                         onPressed: () {
                           // Dispatch the event
@@ -77,6 +83,10 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         },
                         child: const Text('Sign Up'),
                       ),
+
+                      Text("- OR -"),
+
+                      TextButton(onPressed: widget.goToSignInScreen, child: Text("Already have an account? Go to sign in screen")),
                     ],
                   ),
                 );

@@ -1,4 +1,3 @@
-
 import 'package:auth_domain/auth_domain.dart';
 import 'package:core/core.dart';
 import 'package:injectable/injectable.dart';
@@ -24,6 +23,12 @@ class SignInUseCase extends BaseUseCase<AppUserEntity, SignInForm> {
           var userResult = await _appUserRepository.findUserById(authResult.result);
           switch (userResult) {
             case FailedResult<AppUserEntity>():
+              if (userResult.failure.failureType == FailureType.notFound) {
+                return FailedResult(
+                  AppFailure(failureType: FailureType.accountIncomplete, message: userResult.failure.message, trace: userResult.failure.trace),
+                );
+              }
+
               return FailedResult.fromFailure(userResult);
 
             case SuccessResult<AppUserEntity>():

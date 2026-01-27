@@ -3,6 +3,7 @@ enum FailureType {
   network,
   state,
   notFound,
+  accountIncomplete,
   duplicate,
   permission,
   unknown;
